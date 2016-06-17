@@ -35,7 +35,26 @@
       return startDate.from(moment());
     }
 
-    var polling;
+    vm.getPassedTestCount = function (build) {
+        return _.find(build.properties, function (p) {
+            return p.name === "PassedTestCount";
+        }).value;
+    }
+
+    vm.getFailedTestCount = function (build) {
+        return _.find(build.properties, function (p) {
+            return p.name === "FailedTestCount";
+        }).value;
+    }
+
+    vm.getTotalTestCount = function(build) {
+        return _.find(build.properties, function(p) {
+            return p.name === "TotalTestCount";
+        }).value;
+    }
+
+
+      var polling;
     vm.startPollingViewData = function () {
       if (vm.isPollingViewData()) return;
       viewsService.getViewByName($routeParams.viewName).then(function (view) {

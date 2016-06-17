@@ -2,7 +2,7 @@
 
 namespace TeamCityTheatre.Core.Client.Responses {
   public class BuildResponse {
-    public string Id { get; set; }
+    public int Id { get; set; }
     public string BuildTypeId { get; set; }
     public string Number { get; set; }
     public string Status { get; set; }
