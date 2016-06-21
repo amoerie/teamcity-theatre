@@ -39,7 +39,7 @@
             if (angular.isUndefined(property) || property === null) {
                 return defaultValue || 0;
             }
-            return property.Value;
+            return property.value;
         }
 
         vm.getPassedTestCount = function (build) {
