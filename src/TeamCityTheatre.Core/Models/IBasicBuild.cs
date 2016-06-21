@@ -6,7 +6,7 @@ namespace TeamCityTheatre.Core.Models {
    */
 
   public interface IBasicBuild {
-    string Id { get; }
+    int Id { get; }
     string BuildConfigurationId { get; }
     double? PercentageComplete { get; }
     double? ElapsedSeconds { get; }
