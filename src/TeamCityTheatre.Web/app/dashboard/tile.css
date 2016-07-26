@@ -88,8 +88,7 @@
   color: #777;
 }
 .tile .tile-builds .tile-build .progress .progress-bar .branch {
-  font-size: 40px;
-  line-height: 45px;
+  font-size: 18px;
   display: block;
   white-space: nowrap;
   overflow: visible;

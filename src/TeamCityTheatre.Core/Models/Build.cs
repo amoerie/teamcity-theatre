@@ -5,7 +5,7 @@ using Newtonsoft.Json.Converters;
 
 namespace TeamCityTheatre.Core.Models {
   public class Build : IDetailedBuild {
-    public string Id { get; set; }
+    public int Id { get; set; }
     public string BuildConfigurationId { get; set; }
     public double? PercentageComplete { get; set; }
     public double? ElapsedSeconds { get; set; }
