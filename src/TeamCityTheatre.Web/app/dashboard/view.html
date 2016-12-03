@@ -22,6 +22,8 @@
               <span class="branch">{{ build.branchName }}</span>
               <span class="execution-timestamp" ng-show="build.state == 'finished'">{{ vm.getExecutionTimestamp(build); }}</span>
               <span class="remaining" ng-show="build.state == 'running'">{{ vm.getRemainingTime(build); }}</span>
+                <span class="remaining">{{ build.number }}</span>
+                <span class="remaining">{{ build.StatusText }}</span>
             </progressbar>
           </div>
         </div>
