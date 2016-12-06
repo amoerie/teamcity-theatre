@@ -16,6 +16,7 @@
         </h4>
         <div class="tile-builds">
           <div class="tile-build {{ build.status | lowercase }}" ng-repeat="build in tile.builds">
+             <a href="{{ build.webUrl }}" target="_blank">
             <progressbar ng-class="{ 'progress-striped active': build.state == 'running' }"
                           value="build.state == 'finished' ? 100 : build.percentageComplete"
                           type="{{ build.status == 'Success' ? 'success': 'danger'}}">
@@ -23,6 +24,7 @@
               <span class="execution-timestamp" ng-show="build.state == 'finished'">{{ vm.getExecutionTimestamp(build); }}</span>
               <span class="remaining" ng-show="build.state == 'running'">{{ vm.getRemainingTime(build); }}</span>
             </progressbar>
+            </a>
           </div>
         </div>
       </div>
