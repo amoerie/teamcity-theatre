@@ -4,7 +4,7 @@
     "importHelpers": true,
     "jsx": "react",
     "jsxFactory": "createElement",
-    "lib": [ "dom", "es5", "es2015.promise" ],
+    "lib": [ "dom", "es5", "es2015.promise", "scripthost" ],
     "module": "es2015",
     "moduleResolution": "node",
     "noImplicitAny": true,

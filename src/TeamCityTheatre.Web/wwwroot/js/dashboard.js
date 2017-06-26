@@ -136,7 +136,8 @@ var state = __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].combineL
 
 
 
-/**Root dispatching component
+/**
+ * Root dispatching component
  */
 var Dashboard = function (props) {
     if (props.views === null)

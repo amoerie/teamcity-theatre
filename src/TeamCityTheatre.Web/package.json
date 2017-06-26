@@ -14,6 +14,7 @@
     "tslib": "^1.7.1"
   },
   "devDependencies": {
+    "@types/node": "^8.0.2",
     "@types/react": "^15.0.24",
     "@types/react-dom": "^15.5.0",
     "postcss-cli": "^4.0.0",
@@ -30,7 +31,6 @@
     "watch:ts": "npm run ts -- --watch",
     "watch:js": "npm run js -- --watch=true",
     "watch:pcss": "npm run pcss -- --watch=true",
-
     "build:debug": "npm run clean && npm run ts && npm run pcss && npm run js",
     "build:release": "npm run clean && npm run ts && npm run pcss && npm run js -- --env=production"
   }

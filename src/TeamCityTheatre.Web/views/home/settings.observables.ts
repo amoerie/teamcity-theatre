@@ -1,5 +1,6 @@
 ﻿import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
+import "../shared/operators/debug";
 
 import "rxjs/add/observable/combineLatest";
 import "rxjs/add/observable/defer";
@@ -25,7 +26,7 @@ export interface ISettingsState {
 
 const allViews: Observable<IView[] | null> = Observable
   .defer(() => Observable.ajax.getJSON<IView[]>("api/views"))
-  .do(x => console.log(`Loaded ${x.length} views`))
+  .debug("All views")
   .startWith(null);
 
 const toProjects = (basicProjects: IBasicProject[]) => {
@@ -45,13 +46,14 @@ const initialRootProjects: Observable<Project> = Observable
   .map(toProjects)
   .map(projects => projects.filter(p => p.parentProjectId === null)[0])
   .map(rootProject => rootProject.expand())
-  .do(x => console.log(`Initial root project loaded: ${x.name}`));
+  .debug("Initial root project");
 
 const selectedViewsSubject = new Subject<IView>();
 export const selectView = (view: IView) => selectedViewsSubject.next(view);
+
 const selectedViews: Observable<IView> = selectedViewsSubject
   .startWith(null)
-  .do(x => console.log(`Selected a view: ${JSON.stringify(x)}`));
+  .debug("Selected view");
 
 const selectedProjectsSubject = new Subject<Project>();
 export const selectProject = (project: Project) => selectedProjectsSubject.next(project);
@@ -63,18 +65,18 @@ const selectedProjects: Observable<Project> = selectedProjectsSubject
   .switchMap(project => Observable.ajax.getJSON<IDetailedProject>(`api/projects/${project.id}`)
     .map(detailedProject => project.withBuildConfigurations(detailedProject.buildConfigurations))
     .startWith(null))
-  .do(x => console.log(`Selected a project: ${x ? x.name : null}`))
+  .debug("Selected project")
   .startWith(null)
   .share();
 
 const projectUpdates : Observable<Project> = manualProjectUpdates.merge(selectedProjects)
-  .do(x => console.log(`Registered update for project: ${x ? x.name : null}`));
+  .debug("Project update");
 
 const rootProjects: Observable<Project> = initialRootProjects.switchMap(initialRootProject =>
   projectUpdates
     .scan((previousRootProject, projectUpdate) => projectUpdate !== null ? previousRootProject.update(projectUpdate) : previousRootProject, initialRootProject)
     .startWith(initialRootProject))
-  .do(x => console.log(`New root project`));
+    .debug("Root project");
 
 export const state: Observable<ISettingsState> = Observable.combineLatest(
   allViews, selectedViews, rootProjects, selectedProjects,
@@ -84,4 +86,5 @@ export const state: Observable<ISettingsState> = Observable.combineLatest(
     rootProject: rp,
     selectedProject: sp
   })
-).do(x => console.log(`New state`));
+  )
+  .debug("State");

@@ -5,7 +5,8 @@ import * as parse from "date-fns/parse";
 import * as addSeconds from "date-fns/add_seconds";
 import * as distanceInWordsToNow from "date-fns/distance_in_words_to_now";
 
-/**Root dispatching component
+/**
+ * Root dispatching component
  */
 export const Dashboard =
   (props: { views: IView[] | null, selectedView: IView | null, selectedViewData: IViewData | null }) => {

@@ -4,7 +4,8 @@ import { BuildStatus } from "../shared/contracts";
 import * as parse from "date-fns/parse";
 import * as addSeconds from "date-fns/add_seconds";
 import * as distanceInWordsToNow from "date-fns/distance_in_words_to_now";
-/**Root dispatching component
+/**
+ * Root dispatching component
  */
 export var Dashboard = function (props) {
     if (props.views === null)

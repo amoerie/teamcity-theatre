@@ -25,7 +25,7 @@ export const Projects = (props: { rootProject: ProjectModel | null, selectedProj
 
 // recursive components require type annotations
 const Project: StatelessComponent<{ project: ProjectModel, selectedProject: ProjectModel | null }>
-  = (props: { project: ProjectModel, selectedProject: ProjectModel }) => {
+  = props => {
   const hasChildren = props.project.hasChildren() ? "has-children" : "";
   return (
     <li id={props.project.id} className={`project ${hasChildren}`}>
