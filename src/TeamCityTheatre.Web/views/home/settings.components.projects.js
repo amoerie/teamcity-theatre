@@ -1,5 +1,6 @@
 import { createElement } from "react";
-import { selectProject, updateProject } from "./settings.observables";
+import { selectProject } from "./settings.observables.selected-project";
+import { updateProject } from "./settings.observables.projects";
 export var Projects = function (props) {
     if (props.rootProject === null)
         return (createElement("div", null,

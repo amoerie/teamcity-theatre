@@ -1,5 +1,5 @@
 import { createElement } from "react";
-import { selectView } from "./settings.observables";
+import { selectView } from "./settings.observables.selected-view";
 export var Views = function (props) {
     if (props.views === null)
         return (createElement("div", null,

@@ -1,6 +1,6 @@
 import {createElement} from "react";
 import {IView} from "../shared/contracts";
-import {selectView} from "./settings.observables";
+import {selectView} from "./settings.observables.selected-view";
 
 export const Views = (props: { views: IView[] | null, selectedView: IView | null }) => {
   if (props.views === null) return (

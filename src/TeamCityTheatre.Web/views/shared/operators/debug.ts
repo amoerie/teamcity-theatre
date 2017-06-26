@@ -1,4 +1,5 @@
 import {Observable} from 'rxjs/Observable';
+import "rxjs/add/operator/do";
 
 const isProduction: boolean = process && process.env && process.env.NODE_ENV === "production";
 const debug = function <T>(this: Observable<T>, name: string) {

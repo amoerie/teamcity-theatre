@@ -1,6 +1,7 @@
 import {createElement, StatelessComponent} from "react";
 import {Project as ProjectModel} from "../shared/models";
-import {selectProject, updateProject} from "./settings.observables";
+import {selectProject} from "./settings.observables.selected-project";
+import {updateProject} from "./settings.observables.projects";
 
 export const Projects = (props: { rootProject: ProjectModel | null, selectedProject: ProjectModel | null }) => {
   if (props.rootProject === null) return (
