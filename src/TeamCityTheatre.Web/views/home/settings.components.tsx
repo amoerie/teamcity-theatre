@@ -1,12 +1,11 @@
 ﻿import {createElement} from "react";
-import {IView} from "../shared/contracts";
 import {Views} from "./settings.components.views";
 import {SelectedView} from "./settings.components.selected-view";
 import {Projects} from "./settings.components.projects";
 import {SelectedProject} from "./settings.components.selected-project";
-import {Project} from "../shared/models";
+import {Project, View} from "../shared/models";
 
-export const Settings = (props: { views: IView[] | null, selectedView: IView | null, rootProject: Project | null, selectedProject: Project | null }) => {
+export const Settings = (props: { views: View[] | null, selectedView: View | null, rootProject: Project | null, selectedProject: Project | null }) => {
   return (
     <div id="config">
       <div id="views-section" className="section row">

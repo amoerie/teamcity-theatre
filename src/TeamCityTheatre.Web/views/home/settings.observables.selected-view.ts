@@ -3,10 +3,10 @@ import {Subject} from "rxjs/Subject";
 import "../shared/operators/debug";
 import "rxjs/add/operator/startWith";
 
-import {IView} from "../shared/contracts";
+import {View} from "../shared/models";
 
-const selectedViewsSubject = new Subject<IView>();
-export const selectView = (view: IView) => selectedViewsSubject.next(view);
-export const selectedViews: Observable<IView> = selectedViewsSubject
+const selectedViewsSubject = new Subject<View>();
+export const selectView = (view: View) => selectedViewsSubject.next(view);
+export const selectedViews: Observable<View | null> = selectedViewsSubject
   .startWith(null)
   .debug("Selected view");

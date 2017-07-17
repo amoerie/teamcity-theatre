@@ -6,23 +6,23 @@
 
   }
 
-#views-wrapper #views-table .view .view-name {
+#views-wrapper #views-table .view .view-name,
+      #views-wrapper #views-table .view .view-branches-per-tile {
         vertical-align: middle;
       }
 
-#views-wrapper #views-table .view .view-name:hover {
-          background: #d1e4f5;
-          cursor: pointer;
-          color: #444 !important;
-        }
+#views-wrapper #views-table .view:hover {
+        background: #d1e4f5;
+        cursor: pointer;
+        color: #444;
+      }
 
 #views-wrapper #views-table .view.selected {
         background-color: #337ab7;
+        color: #eee;
       }
 
-#views-wrapper #views-table .view.selected > .view-name {
-          color: #eee;
-        }
+#views-wrapper #views-table .view.selected:hover { color: #eee; }
 
 #projects-wrapper .project {
     margin: 5px;

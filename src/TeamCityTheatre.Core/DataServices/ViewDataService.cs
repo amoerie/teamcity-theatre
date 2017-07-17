@@ -28,7 +28,7 @@ namespace TeamCityTheatre.Core.DataServices {
       if (view.Id == default(Guid)) view.Id = Guid.NewGuid();
       foreach (var tile in view.Tiles.Where(tile => tile.Id == default(Guid))) tile.Id = Guid.NewGuid();
       var configuration = _configurationRepository.GetConfiguration();
-      configuration.Views = new List<View>(configuration.Views.Where(v => v.Id != view.Id)) {view};
+      configuration.Views = configuration.Views.Select(v => v.Id == view.Id ? view : v).ToList();
       _configurationRepository.SaveConfiguration(configuration);
       return view;
     }

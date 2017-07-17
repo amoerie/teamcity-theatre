@@ -51,3 +51,44 @@ var Project = (function () {
     return Project;
 }());
 export { Project };
+var View = (function () {
+    function View(params) {
+        this.id = params.id;
+        this.name = params.name;
+        this.defaultNumberOfBranchesPerTile = params.defaultNumberOfBranchesPerTile;
+        this.tiles = params.tiles;
+        this.isEditing = typeof params.isEditing == "undefined" ? false : params.isEditing;
+    }
+    View.prototype.withName = function (name) {
+        return new View(tslib_1.__assign({}, this, { name: name }));
+    };
+    View.prototype.withDefaultNumberOfBranchesPerTile = function (defaultNumberOfBranchesPerTile) {
+        return new View(tslib_1.__assign({}, this, { defaultNumberOfBranchesPerTile: defaultNumberOfBranchesPerTile }));
+    };
+    View.prototype.withIsEditing = function (isEditing) {
+        return new View(tslib_1.__assign({}, this, { isEditing: isEditing }));
+    };
+    View.fromContract = function (view) {
+        return new View({
+            id: view.id,
+            name: view.name,
+            defaultNumberOfBranchesPerTile: view.defaultNumberOfBranchesPerTile,
+            tiles: view.tiles.map(Tile.fromContract)
+        });
+    };
+    return View;
+}());
+export { View };
+var Tile = (function () {
+    function Tile(params) {
+        this.id = params.id;
+        this.label = params.label;
+        this.buildConfigurationId = params.buildConfigurationId;
+        this.buildConfigurationDisplayName = params.buildConfigurationDisplayName;
+    }
+    Tile.fromContract = function (tile) {
+        return new Tile(tile);
+    };
+    return Tile;
+}());
+export { Tile };

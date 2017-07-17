@@ -1,4 +1,4 @@
-import {IBasicBuildConfiguration, IBasicProject} from "./contracts";
+import {Guid, IBasicBuildConfiguration, IBasicProject, ITile, IView} from "./contracts";
 
 interface IProjectConstructorParameters extends IBasicProject {
   parent? : Project | null,
@@ -84,5 +84,69 @@ export class Project {
   getLabel() : string {
     if(this.parent === null) return this.name;
     return [this.parent.getLabel(), this.name].join(" / ");
+  }
+}
+
+export class View {
+  id: Guid;
+  name: string;
+  defaultNumberOfBranchesPerTile: number;
+  tiles: Tile[];
+  isEditing: boolean;
+
+  constructor(params: { id: Guid, name: string, defaultNumberOfBranchesPerTile: number, tiles: Tile[], isEditing? : boolean }) {
+    this.id = params.id;
+    this.name = params.name;
+    this.defaultNumberOfBranchesPerTile = params.defaultNumberOfBranchesPerTile;
+    this.tiles = params.tiles;
+    this.isEditing = typeof params.isEditing == "undefined" ? false : params.isEditing;
+  }
+
+  withName(name: string) {
+    return new View({
+      ...(this as View),
+      name: name
+    });
+  }
+
+  withDefaultNumberOfBranchesPerTile(defaultNumberOfBranchesPerTile: number) {
+    return new View({
+      ...(this as View),
+      defaultNumberOfBranchesPerTile : defaultNumberOfBranchesPerTile
+    });
+  }
+
+  withIsEditing(isEditing: boolean) {
+    return new View({
+      ...(this as View),
+      isEditing : isEditing
+    });
+  }
+
+  static fromContract(view: IView) {
+    return new View({
+      id: view.id,
+      name: view.name,
+      defaultNumberOfBranchesPerTile: view.defaultNumberOfBranchesPerTile,
+      tiles: view.tiles.map(Tile.fromContract)
+    })
+  }
+}
+
+export class Tile {
+  id: Guid;
+  label: string;
+  buildConfigurationId: string;
+  buildConfigurationDisplayName: string;
+
+  constructor(params: { id: Guid, label: string, buildConfigurationId: string, buildConfigurationDisplayName: string }) {
+    this.id = params.id;
+    this.label = params.label;
+    this.buildConfigurationId = params.buildConfigurationId;
+    this.buildConfigurationDisplayName = params.buildConfigurationDisplayName;
+  }
+
+  static fromContract(tile: ITile) {
+    return new Tile(tile);
   }
 }

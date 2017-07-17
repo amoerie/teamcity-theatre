@@ -1,7 +1,7 @@
 import {createElement} from "react";
-import {ITile, IView} from "../shared/contracts";
+import {Tile, View} from "../shared/models";
 
-export const SelectedView = (props: { selectedView: IView | null }) => {
+export const SelectedView = (props: { selectedView: View | null }) => {
   if (props.selectedView === null) return <div />;
   return (
     <div id="view-details">
@@ -16,7 +16,7 @@ export const SelectedView = (props: { selectedView: IView | null }) => {
   );
 };
 
-const TilesTable = (props: { view: IView }) => {
+const TilesTable = (props: { view: View }) => {
   return (
     <table className="table table-striped">
       <thead>
@@ -33,7 +33,7 @@ const TilesTable = (props: { view: IView }) => {
   );
 };
 
-const TileRow = (props: { view: IView, tile: ITile }) => {
+const TileRow = (props: { view: View, tile: Tile }) => {
   return (
     <tr>
       <td>{props.tile.label}</td>
@@ -46,14 +46,14 @@ const TileRow = (props: { view: IView, tile: ITile }) => {
   );
 };
 
-const EditTileButton = (props: { view: IView, tile: ITile }) => (
+const EditTileButton = (props: { view: View, tile: Tile }) => (
   <button className="edit-tile-button btn btn-default" onClick={() => {
   }} title="Edit">
     <i className="fa fa-pencil"/>
   </button>
 );
 
-const DeleteTileButton = (props: { view: IView, tile: ITile }) => (
+const DeleteTileButton = (props: { view: View, tile: Tile }) => (
   <button className="delete-tile-button btn btn-danger" onClick={() => {
   }}
           title="Delete">

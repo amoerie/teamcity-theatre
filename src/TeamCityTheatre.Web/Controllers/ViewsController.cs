@@ -29,7 +29,7 @@ namespace TeamCityTheatre.Web.Controllers {
     }
 
     [HttpPost("")]
-    public View Post(View view) {
+    public View Post([FromBody] View view) {
       return _viewDataService.SaveView(view);
     }
 

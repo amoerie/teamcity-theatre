@@ -9,22 +9,22 @@
 #views-wrapper {
   #views-table {
     .view {
-      .view-name {
+      .view-name,
+      .view-branches-per-tile {
         vertical-align: middle;
+      }
 
-        &:hover {
-          background: #d1e4f5;
-          cursor: pointer;
-          color: #444 !important;
-        }
+      &:hover {
+        background: #d1e4f5;
+        cursor: pointer;
+        color: #444;
       }
 
       &.selected {
         background-color: #337ab7;
+        color: #eee;
 
-        > .view-name {
-          color: #eee;
-        }
+        &:hover { color: #eee; }
       }
     }
   }

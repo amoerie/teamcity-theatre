@@ -3,8 +3,7 @@ import "../shared/operators/debug";
 
 import "rxjs/add/observable/combineLatest";
 
-import {IView} from "../shared/contracts";
-import {Project} from "../shared/models";
+import {Project, View} from "../shared/models";
 
 import {views} from "./settings.observables.views";
 import {selectedViews} from "./settings.observables.selected-view";
@@ -12,8 +11,8 @@ import {rootProjects} from "./settings.observables.projects";
 import {selectedProjects} from "./settings.observables.selected-project";
 
 export interface ISettingsState {
-  views: IView[] | null;
-  selectedView: IView | null;
+  views: View[] | null;
+  selectedView: View | null;
   rootProject: Project | null;
   selectedProject: Project | null;
 }

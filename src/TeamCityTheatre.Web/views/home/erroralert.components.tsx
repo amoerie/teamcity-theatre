@@ -4,9 +4,10 @@ export const ErrorAlert = (props: { error : Error }) => {
   return (
     <div className="alert alert-error">
       <strong>Error!</strong> Can you make sense of this?
-      <p>{props.error.name}</p>
-      <p>{props.error.message}</p>
-      <p>{props.error.stack}</p>
+      <div className="well well-lg">
+        <h3>Details</h3>
+        <pre dangerouslySetInnerHTML={{ __html: JSON.stringify(props.error, null, 2) }} />
+      </div>
     </div>
   );
 };
