@@ -18,7 +18,7 @@ namespace TeamCityTheatre.Core.DataServices {
     }
 
     public async Task<IEnumerable<IDetailedBuild>> GetBuildsOfBuildConfigurationAsync(string buildConfigurationId, int count = 100) {
-      var request = new RestRequest("builds/?locator=branch:(default:any),running:any,count:{count},buildType:(id:{buildConfigurationId})" +
+      var request = new RestRequest("builds/?locator=branch:(default:any,policy:active_history_and_active_vcs_branches),running:any,count:{count},buildType:(id:{buildConfigurationId})" +
                                     "&fields=count,build(id,buildTypeId,number,status,state,percentageComplete,branchName,defaultBranch,href,webUrl," +
                                     "running-info(percentageComplete,elapsedSeconds,estimatedTotalSeconds,currentStageText),queuedDate,startDate,finishDate)");
       request.AddUrlSegment("count", Convert.ToString(count));
