@@ -37,11 +37,11 @@ const initialRootProjects: Observable<Project> = Observable
 const manualProjectUpdates = new Subject<Project>();
 export const updateProject = (project: Project) => manualProjectUpdates.next(project);
 
-const projectUpdates : Observable<Project> = manualProjectUpdates.merge(selectedProjects)
+const projectUpdates : Observable<Project | null> = manualProjectUpdates.merge(selectedProjects)
   .debug("Project update");
 
-export const rootProjects: Observable<Project> = initialRootProjects.switchMap(initialRootProject =>
+export const rootProjects: Observable<Project> = initialRootProjects.switchMap((initialRootProject: Project) =>
   projectUpdates
-    .scan((previousRootProject, projectUpdate) => projectUpdate !== null ? previousRootProject.update(projectUpdate) : previousRootProject, initialRootProject)
+    .scan<Project | null, Project>((previousRootProject: Project, projectUpdate : Project | null) => previousRootProject.update(projectUpdate), initialRootProject)
     .startWith(initialRootProject))
   .debug("Projects");

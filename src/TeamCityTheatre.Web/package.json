@@ -7,21 +7,25 @@
   "author": "Alexander Moerman",
   "license": "MIT",
   "dependencies": {
-    "date-fns": "^1.28.4",
-    "inferno": "^3.1.2",
-    "inferno-compat": "^3.1.2",
-    "rxjs": "^5.4.0",
-    "tslib": "^1.7.1"
+    "@types/uuid": "^3.0.0",
+    "date-fns": "^1.28.5",
+    "inferno": "^3.6.4",
+    "inferno-compat": "^3.6.4",
+    "react-sortable-hoc": "^0.6.5",
+    "rxjs": "^5.4.2",
+    "tslib": "^1.7.1",
+    "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "@types/node": "^8.0.2",
-    "@types/react": "^15.0.24",
-    "@types/react-dom": "^15.5.0",
-    "postcss-cli": "^4.0.0",
-    "postcss-nested": "^2.0.2",
+    "@types/node": "^8.0.13",
+    "@types/react": "^15.0.38",
+    "@types/react-dom": "^15.5.1",
+    "@types/react-sortable-hoc": "^0.6.0",
+    "postcss-cli": "^4.1.0",
+    "postcss-nested": "^2.0.4",
     "rimraf": "^2.6.1",
-    "typescript": "^2.3.2",
-    "webpack": "^2.5.1"
+    "typescript": "^2.4.1",
+    "webpack": "^3.3.0"
   },
   "scripts": {
     "clean": "rimraf views/**/*.js views/**/*.js.map",

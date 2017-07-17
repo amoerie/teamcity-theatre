@@ -33,7 +33,7 @@ namespace TeamCityTheatre.Web.Controllers {
       return _viewDataService.SaveView(view);
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{id:guid}")]
     public void Delete(Guid id) {
       var view = _viewDataService.GetViewById(id);
       if (view != null) {

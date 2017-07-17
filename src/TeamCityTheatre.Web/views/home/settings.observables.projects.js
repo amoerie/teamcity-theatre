@@ -31,7 +31,7 @@ var projectUpdates = manualProjectUpdates.merge(selectedProjects)
     .debug("Project update");
 export var rootProjects = initialRootProjects.switchMap(function (initialRootProject) {
     return projectUpdates
-        .scan(function (previousRootProject, projectUpdate) { return projectUpdate !== null ? previousRootProject.update(projectUpdate) : previousRootProject; }, initialRootProject)
+        .scan(function (previousRootProject, projectUpdate) { return previousRootProject.update(projectUpdate); }, initialRootProject)
         .startWith(initialRootProject);
 })
     .debug("Projects");

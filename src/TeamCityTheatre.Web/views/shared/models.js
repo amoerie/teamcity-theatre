@@ -1,4 +1,7 @@
 import * as tslib_1 from "tslib";
+import { v4 as newguid } from "uuid";
+import { move } from "./arrays/move";
+import { mergeById } from "./arrays/mergeById";
 var Project = (function () {
     function Project(params) {
         if (!params)
@@ -36,6 +39,8 @@ var Project = (function () {
     };
     // propagate updates to a project down the chain
     Project.prototype.update = function (project) {
+        if (project === null)
+            return this;
         if (this.id === project.id)
             return project; // if this is the project that was updated, return the new version
         return new Project(tslib_1.__assign({}, this, { children: this.children.map(function (c) { return c.update(project); }) }));
@@ -51,6 +56,17 @@ var Project = (function () {
     return Project;
 }());
 export { Project };
+var BuildConfiguration = (function () {
+    function BuildConfiguration(params) {
+        this.id = params.id;
+        this.name = params.name;
+    }
+    BuildConfiguration.fromContract = function (buildConfiguration) {
+        return new BuildConfiguration(buildConfiguration);
+    };
+    return BuildConfiguration;
+}());
+export { BuildConfiguration };
 var View = (function () {
     function View(params) {
         this.id = params.id;
@@ -68,12 +84,41 @@ var View = (function () {
     View.prototype.withIsEditing = function (isEditing) {
         return new View(tslib_1.__assign({}, this, { isEditing: isEditing }));
     };
+    /**
+     * Moves a single tile from the old index to the new index
+     * @param oldIndex
+     * @param newIndex
+     */
+    View.prototype.moveTile = function (oldIndex, newIndex) {
+        return new View(tslib_1.__assign({}, this, { tiles: move(oldIndex, newIndex, this.tiles) }));
+    };
+    /**
+     * Replaces an old tile with the updated version
+     */
+    View.prototype.withTile = function (tile) {
+        return new View(tslib_1.__assign({}, this, { tiles: mergeById(tile, this.tiles) }));
+    };
+    /**
+     * Removes a tile
+     */
+    View.prototype.withoutTile = function (tile) {
+        return new View(tslib_1.__assign({}, this, { tiles: this.tiles.filter(function (t) { return t.id !== tile.id; }) }));
+    };
     View.fromContract = function (view) {
         return new View({
             id: view.id,
             name: view.name,
             defaultNumberOfBranchesPerTile: view.defaultNumberOfBranchesPerTile,
             tiles: view.tiles.map(Tile.fromContract)
+        });
+    };
+    View.newView = function () {
+        return new View({
+            id: newguid(),
+            name: "New view",
+            defaultNumberOfBranchesPerTile: 3,
+            tiles: [],
+            isEditing: true
         });
     };
     return View;
@@ -85,9 +130,24 @@ var Tile = (function () {
         this.label = params.label;
         this.buildConfigurationId = params.buildConfigurationId;
         this.buildConfigurationDisplayName = params.buildConfigurationDisplayName;
+        this.isEditing = typeof params.isEditing === "undefined" ? false : params.isEditing;
     }
+    Tile.prototype.withLabel = function (label) {
+        return new Tile(tslib_1.__assign({}, this, { label: label }));
+    };
+    Tile.prototype.withIsEditing = function (isEditing) {
+        return new Tile(tslib_1.__assign({}, this, { isEditing: isEditing }));
+    };
     Tile.fromContract = function (tile) {
         return new Tile(tile);
+    };
+    Tile.newTile = function (project, buildConfiguration) {
+        return new Tile({
+            id: newguid(),
+            label: buildConfiguration.name,
+            buildConfigurationId: buildConfiguration.id,
+            buildConfigurationDisplayName: [project.getLabel(), buildConfiguration.name].join(" / ")
+        });
     };
     return Tile;
 }());

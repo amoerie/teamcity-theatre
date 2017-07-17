@@ -1,8 +1,9 @@
 import {createElement} from "react";
-import {Project} from "../shared/models";
-import {IBasicBuildConfiguration, IView} from "../shared/contracts";
+import {BuildConfiguration, Project, Tile, View} from "../shared/models";
+import {updateView} from "./settings.observables.views";
+import {saveView} from "./settings.observables.saved-view";
 
-export const SelectedProject = (props: { selectedProject: Project | null, selectedView: IView | null }) => {
+export const SelectedProject = (props: { selectedProject: Project | null, selectedView: View | null }) => {
   if (props.selectedProject === null) {
     return (
       <div/>
@@ -59,8 +60,9 @@ const NoBuildConfigurationsWarning = (props: { project: Project }) => {
   );
 };
 
-const BuildConfigurationsTable = (props: { project: Project, view: IView }) => {
-  if (props.project.buildConfigurations === null)
+const BuildConfigurationsTable = (props: { project: Project, view: View }) => {
+  const { project, view } = props;
+  if (project.buildConfigurations === null)
     return (
       <div className="panel-footer"><i className="fa fa-spin fa-cog"/> Loading build configurations</div>
     );
@@ -73,19 +75,23 @@ const BuildConfigurationsTable = (props: { project: Project, view: IView }) => {
       </tr>
       </thead>
       <tbody>
-      { props.project.buildConfigurations.map(b => <BuildConfigurationRow buildConfiguration={b} view={props.view} />) }
+      { project.buildConfigurations.map(b => <BuildConfigurationRow buildConfiguration={b} view={view} project={project} />) }
       </tbody>
     </table>
   );
 };
 
-const BuildConfigurationRow = (props: { buildConfiguration: IBasicBuildConfiguration, view: IView }) => {
+const handleAddTileButtonClick = (buildConfiguration: BuildConfiguration, view: View, project : Project) =>
+  () => saveView(updateView(view.withTile(Tile.newTile(project, buildConfiguration))));
+
+const BuildConfigurationRow = (props: { buildConfiguration: BuildConfiguration, view: View, project: Project }) => {
+  const  { buildConfiguration, view, project} = props;
   return (
     <tr>
-      <td>{props.buildConfiguration.name}</td>
+      <td>{buildConfiguration.name}</td>
       <td>
-        <button className="btn btn-success btn-sm">
-          <i className="fa fa-plus"/> Add tile to {props.view.name}
+        <button className="btn btn-success btn-sm" onClick={handleAddTileButtonClick(buildConfiguration, view, project)}>
+          <i className="fa fa-plus"/> Add tile to {view.name}
         </button>
       </td>
     </tr>

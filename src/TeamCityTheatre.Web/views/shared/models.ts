@@ -1,9 +1,12 @@
 import {Guid, IBasicBuildConfiguration, IBasicProject, ITile, IView} from "./contracts";
+import {v4 as newguid } from "uuid";
+import {move} from "./arrays/move";
+import {mergeById} from "./arrays/mergeById";
 
 interface IProjectConstructorParameters extends IBasicProject {
-  parent? : Project | null,
+  parent?: Project | null,
   children?: Project[],
-  buildConfigurations?: IBasicBuildConfiguration[] | null,
+  buildConfigurations?: BuildConfiguration[] | null,
   isExpanded?: boolean
 }
 
@@ -18,7 +21,7 @@ export class Project {
   parentProjectId: string | null;
   children: Project[];
   isExpanded: boolean;
-  buildConfigurations: IBasicBuildConfiguration[] | null;
+  buildConfigurations: BuildConfiguration[] | null;
 
   constructor(params: IProjectConstructorParameters) {
     if (!params) throw new Error("Invalid constructor parameters: " + JSON.stringify(params));
@@ -43,7 +46,7 @@ export class Project {
     this.children.forEach(c => c.parent = this);
   }
 
-  withBuildConfigurations(buildConfigurations: IBasicBuildConfiguration[]) {
+  withBuildConfigurations(buildConfigurations: BuildConfiguration[]) {
     return new Project({
       ...(this as Project),
       buildConfigurations: buildConfigurations
@@ -69,7 +72,8 @@ export class Project {
   }
 
   // propagate updates to a project down the chain
-  update(project: Project): Project {
+  update(project: Project | null): Project {
+    if (project === null) return this;
     if (this.id === project.id) return project; // if this is the project that was updated, return the new version
     return new Project({
       ...(this as Project),
@@ -81,9 +85,23 @@ export class Project {
     return this.children.length > 0;
   }
 
-  getLabel() : string {
-    if(this.parent === null) return this.name;
+  getLabel(): string {
+    if (this.parent === null) return this.name;
     return [this.parent.getLabel(), this.name].join(" / ");
+  }
+}
+
+export class BuildConfiguration {
+  id: string;
+  name: string;
+
+  constructor(params: { id: string, name: string }) {
+    this.id = params.id;
+    this.name = params.name;
+  }
+
+  static fromContract(buildConfiguration: IBasicBuildConfiguration) {
+    return new BuildConfiguration(buildConfiguration);
   }
 }
 
@@ -94,7 +112,7 @@ export class View {
   tiles: Tile[];
   isEditing: boolean;
 
-  constructor(params: { id: Guid, name: string, defaultNumberOfBranchesPerTile: number, tiles: Tile[], isEditing? : boolean }) {
+  constructor(params: { id: Guid, name: string, defaultNumberOfBranchesPerTile: number, tiles: Tile[], isEditing?: boolean }) {
     this.id = params.id;
     this.name = params.name;
     this.defaultNumberOfBranchesPerTile = params.defaultNumberOfBranchesPerTile;
@@ -112,14 +130,46 @@ export class View {
   withDefaultNumberOfBranchesPerTile(defaultNumberOfBranchesPerTile: number) {
     return new View({
       ...(this as View),
-      defaultNumberOfBranchesPerTile : defaultNumberOfBranchesPerTile
+      defaultNumberOfBranchesPerTile: defaultNumberOfBranchesPerTile
     });
   }
 
   withIsEditing(isEditing: boolean) {
     return new View({
       ...(this as View),
-      isEditing : isEditing
+      isEditing: isEditing
+    });
+  }
+
+  /**
+   * Moves a single tile from the old index to the new index
+   * @param oldIndex
+   * @param newIndex
+   */
+  moveTile(oldIndex: number, newIndex: number) : View {
+    return new View({
+      ...(this as View),
+      tiles: move(oldIndex, newIndex, this.tiles)
+    })
+  }
+
+  /**
+   * Replaces an old tile with the updated version
+   */
+  withTile(tile: Tile) {
+    return new View({
+      ...(this as View),
+      tiles: mergeById(tile, this.tiles)
+    });
+  }
+
+  /**
+   * Removes a tile
+   */
+  withoutTile(tile: Tile) {
+    return new View({
+      ...(this as View),
+      tiles: this.tiles.filter(t => t.id !== tile.id)
     });
   }
 
@@ -131,6 +181,16 @@ export class View {
       tiles: view.tiles.map(Tile.fromContract)
     })
   }
+
+  static newView() {
+    return new View({
+      id: newguid(),
+      name: "New view",
+      defaultNumberOfBranchesPerTile : 3,
+      tiles: [],
+      isEditing: true
+    })
+  }
 }
 
 export class Tile {
@@ -138,15 +198,40 @@ export class Tile {
   label: string;
   buildConfigurationId: string;
   buildConfigurationDisplayName: string;
+  isEditing : boolean;
 
-  constructor(params: { id: Guid, label: string, buildConfigurationId: string, buildConfigurationDisplayName: string }) {
+  constructor(params: { id: Guid, label: string, buildConfigurationId: string, buildConfigurationDisplayName: string, isEditing? : boolean }) {
     this.id = params.id;
     this.label = params.label;
     this.buildConfigurationId = params.buildConfigurationId;
     this.buildConfigurationDisplayName = params.buildConfigurationDisplayName;
+    this.isEditing = typeof params.isEditing === "undefined" ? false : params.isEditing;
+  }
+
+  withLabel(label: string) {
+    return new Tile({
+      ...(this as Tile),
+      label: label
+    });
+  }
+
+  withIsEditing(isEditing: boolean) {
+    return new Tile({
+      ...(this as Tile),
+      isEditing: isEditing
+    });
   }
 
   static fromContract(tile: ITile) {
     return new Tile(tile);
+  }
+
+  static newTile(project: Project, buildConfiguration: BuildConfiguration) {
+    return new Tile({
+      id: newguid(),
+      label: buildConfiguration.name,
+      buildConfigurationId : buildConfiguration.id,
+      buildConfigurationDisplayName : [project.getLabel(), buildConfiguration.name].join(" / ")
+    });
   }
 }

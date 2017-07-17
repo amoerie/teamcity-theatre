@@ -24,8 +24,62 @@
         background-color: #337ab7;
         color: #eee;
 
-        &:hover { color: #eee; }
+        &:hover {
+          color: #eee;
+        }
       }
+    }
+  }
+}
+
+#selected-view-wrapper .tiles-list .tile,
+.tile-drag-helper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+
+  .tile-drag-handle {
+    flex: 0 0 50px;
+    padding: 10px 0;
+    text-align: center;
+    &:hover {
+      cursor: move;
+    }
+  }
+
+  .tile-label {
+    flex: 1 0 100px;
+    padding-right: 8px;
+  }
+
+  .tile-build-configuration {
+    flex: 1 0 200px;
+  }
+
+  .tile-actions {
+    flex: 0 0 100px;
+  }
+
+  .tile-drag-handle,
+  .tile-label,
+  .tile-build-configuration,
+  .tile-actions {
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background: #d1e4f5;
+    cursor: pointer;
+    color: #444;
+  }
+
+  &.selected {
+    background-color: #337ab7;
+    color: #eee;
+
+    &:hover {
+      color: #eee;
     }
   }
 }

@@ -8,14 +8,14 @@ import "rxjs/add/operator/startWith";
 import "rxjs/add/operator/switchMap";
 
 import {IDetailedProject} from "../shared/contracts";
-import {Project} from "../shared/models";
+import {BuildConfiguration, Project} from "../shared/models";
 
 const selectedProjectsSubject = new Subject<Project>();
 export const selectProject = (project: Project) => selectedProjectsSubject.next(project);
 
-export const selectedProjects: Observable<Project> = selectedProjectsSubject
+export const selectedProjects: Observable<Project | null> = selectedProjectsSubject
   .switchMap(project => Observable.ajax.getJSON<IDetailedProject>(`api/projects/${project.id}`)
-    .map(detailedProject => project.withBuildConfigurations(detailedProject.buildConfigurations))
+    .map(detailedProject => project.withBuildConfigurations(detailedProject.buildConfigurations.map(BuildConfiguration.fromContract)))
     .startWith(null))
   .debug("Selected project")
   .startWith(null)

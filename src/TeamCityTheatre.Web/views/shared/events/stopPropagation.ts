@@ -1,0 +1,1 @@
+export const stopPropagation = (event: React.SyntheticEvent<any>) => event.stopPropagation();

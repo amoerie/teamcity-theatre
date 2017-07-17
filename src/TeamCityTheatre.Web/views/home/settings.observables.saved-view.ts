@@ -2,8 +2,8 @@ import {Observable} from "rxjs/Observable";
 import {Subject} from "rxjs/Subject";
 import "rxjs/add/observable/dom/ajax";
 import "rxjs/add/operator/map";
+import "rxjs/add/operator/share";
 import "rxjs/add/operator/startWith";
-
 import "../shared/operators/debug";
 
 import {View} from "../shared/models";
@@ -17,4 +17,5 @@ export const savedViews: Observable<View> = savedViewsSubject
     .map(xhr => xhr.response as IView)
     .map(View.fromContract)
   )
-  .debug("Saved view");
+  .debug("Saved view")
+  .share();

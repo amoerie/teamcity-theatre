@@ -3,6 +3,8 @@ import { View } from "../shared/models";
 import { selectView } from "./settings.observables.selected-view";
 import { updateView } from "./settings.observables.views";
 import { saveView } from "./settings.observables.saved-view";
+import { onEnter } from "../shared/events/onEnter";
+import { stopPropagation } from "../shared/events/stopPropagation";
 export var Views = function (props) {
     if (props.views === null)
         return (createElement("div", null,
@@ -17,15 +19,7 @@ export var Views = function (props) {
                     createElement(CreateViewButton, null))),
             createElement(ViewsTable, { views: props.views, selectedView: props.selectedView }))));
 };
-var handleCreateViewButtonClick = function () {
-    saveView(new View({
-        id: "00000000-0000-0000-0000-000000000000",
-        name: "New view",
-        defaultNumberOfBranchesPerTile: 3,
-        isEditing: true,
-        tiles: []
-    }));
-};
+var handleCreateViewButtonClick = function () { return updateView(View.newView()); };
 var CreateViewButton = function (props) { return (createElement("button", { className: "add-view-button btn btn-success", onClick: handleCreateViewButtonClick },
     createElement("i", { className: "fa fa-plus" }),
     " Create a new view")); };
@@ -53,12 +47,12 @@ var ViewRow = function (props) {
 };
 var ViewName = function (props) {
     if (props.view.isEditing)
-        return createElement("input", { type: "text", name: "view-name-input", className: "form-control", value: props.view.name, onClick: function (event) { return event.stopPropagation(); }, onChange: function (event) { return updateView(props.view.withName(event.currentTarget.value)); }, onKeyUp: function (event) { return event.keyCode === 13 ? saveView(props.view) : {}; } });
+        return createElement("input", { type: "text", name: "view-name-input", className: "form-control", value: props.view.name, onClick: stopPropagation, onChange: function (event) { return updateView(props.view.withName(event.currentTarget.value)); }, onKeyUp: onEnter(function () { return saveView(props.view); }) });
     return createElement("span", null, props.view.name);
 };
 var DefaultNumberOfBranchesPerTile = function (props) {
     if (props.view.isEditing)
-        return createElement("input", { type: "number", name: "view-branches-per-tile-input", className: "form-control", value: props.view.defaultNumberOfBranchesPerTile, onClick: function (event) { return event.stopPropagation(); }, onChange: function (event) { return updateView(props.view.withDefaultNumberOfBranchesPerTile(+event.currentTarget.value)); }, onKeyUp: function (event) { return event.keyCode === 13 ? saveView(props.view) : {}; } });
+        return createElement("input", { type: "number", name: "view-branches-per-tile-input", className: "form-control", value: props.view.defaultNumberOfBranchesPerTile, onClick: stopPropagation, onChange: function (event) { return updateView(props.view.withDefaultNumberOfBranchesPerTile(+event.currentTarget.value)); }, onKeyUp: onEnter(function () { return saveView(props.view); }) });
     return createElement("span", null, props.view.defaultNumberOfBranchesPerTile);
 };
 var handleSaveViewButtonClick = function (view) { return function (event) {

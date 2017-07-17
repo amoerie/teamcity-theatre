@@ -25,10 +25,15 @@ namespace TeamCityTheatre.Core.DataServices {
     }
 
     public View SaveView(View view) {
-      if (view.Id == default(Guid)) view.Id = Guid.NewGuid();
-      foreach (var tile in view.Tiles.Where(tile => tile.Id == default(Guid))) tile.Id = Guid.NewGuid();
       var configuration = _configurationRepository.GetConfiguration();
-      configuration.Views = configuration.Views.Select(v => v.Id == view.Id ? view : v).ToList();
+      var views = configuration.Views.ToList();
+      var index = views.FindIndex(v => v.Id == view.Id);
+      if (index > -1) {
+        views[index] = view;
+      } else {
+        views.Add(view);
+      }
+      configuration.Views = views;
       _configurationRepository.SaveConfiguration(configuration);
       return view;
     }

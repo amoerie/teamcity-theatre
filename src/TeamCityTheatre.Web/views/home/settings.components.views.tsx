@@ -1,8 +1,10 @@
-import {createElement} from "react";
+import {ChangeEvent, createElement} from "react";
 import {View} from "../shared/models";
 import {selectView} from "./settings.observables.selected-view";
 import {updateView} from "./settings.observables.views";
 import {saveView} from "./settings.observables.saved-view";
+import {onEnter} from "../shared/events/onEnter";
+import {stopPropagation} from "../shared/events/stopPropagation";
 
 export const Views = (props: { views: View[] | null, selectedView: View | null }) => {
   if (props.views === null) return (
@@ -23,15 +25,7 @@ export const Views = (props: { views: View[] | null, selectedView: View | null }
   );
 };
 
-const handleCreateViewButtonClick = () => {
-  saveView(new View({
-    id: "00000000-0000-0000-0000-000000000000",
-    name: "New view",
-    defaultNumberOfBranchesPerTile: 3,
-    isEditing: true,
-    tiles: []
-  }));
-};
+const handleCreateViewButtonClick = () => updateView(View.newView());
 
 const CreateViewButton = (props: {}) => (
   <button className="add-view-button btn btn-success" onClick={handleCreateViewButtonClick}>
@@ -81,9 +75,9 @@ const ViewName = (props: { view: View }) => {
                   name="view-name-input"
                   className="form-control"
                   value={props.view.name}
-                  onClick={(event: React.MouseEvent<HTMLInputElement>) => event.stopPropagation()}
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => updateView(props.view.withName(event.currentTarget.value))}
-                  onKeyUp={(event: React.KeyboardEvent<HTMLInputElement>) => event.keyCode === 13 ? saveView(props.view) : {}}/>;
+                  onClick={stopPropagation}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateView(props.view.withName(event.currentTarget.value))}
+                  onKeyUp={onEnter(() => saveView(props.view))}/>;
   return <span>{props.view.name}</span>;
 };
 
@@ -93,9 +87,9 @@ const DefaultNumberOfBranchesPerTile = (props: { view: View }) => {
                   name="view-branches-per-tile-input"
                   className="form-control"
                   value={props.view.defaultNumberOfBranchesPerTile}
-                  onClick={(event: React.MouseEvent<HTMLInputElement>) => event.stopPropagation()}
-                  onChange={(event: React.ChangeEvent<HTMLInputElement>) => updateView(props.view.withDefaultNumberOfBranchesPerTile(+event.currentTarget.value))}
-                  onKeyUp={(event: React.KeyboardEvent<HTMLInputElement>) => event.keyCode === 13 ? saveView(props.view) : {}}/>;
+                  onClick={stopPropagation}
+                  onChange={(event: ChangeEvent<HTMLInputElement>) => updateView(props.view.withDefaultNumberOfBranchesPerTile(+event.currentTarget.value))}
+                  onKeyUp={onEnter(() => saveView(props.view))}/>;
   return <span>{props.view.defaultNumberOfBranchesPerTile}</span>;
 };
 

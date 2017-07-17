@@ -17,20 +17,21 @@ export var Projects = function (props) {
 };
 // recursive components require type annotations
 var Project = function (props) {
-    var hasChildren = props.project.hasChildren() ? "has-children" : "";
-    return (createElement("li", { id: props.project.id, className: "project " + hasChildren },
-        createElement(ToggleProjectChildrenButton, { project: props.project }),
-        createElement(ShowProjectDetailsButton, { project: props.project, selectedProject: props.selectedProject }),
-        createElement(ProjectChildren, { project: props.project, selectedProject: props.selectedProject })));
+    var project = props.project, selectedProject = props.selectedProject;
+    var hasChildren = project.hasChildren() ? "has-children" : "";
+    return (createElement("li", { id: project.id, className: "project " + hasChildren },
+        createElement(ToggleProjectChildrenButton, { project: project }),
+        createElement(ShowProjectDetailsButton, { project: project, selectedProject: selectedProject }),
+        createElement(ProjectChildren, { project: project, selectedProject: selectedProject })));
 };
 var ToggleProjectChildrenButton = function (props) {
     var iconClass = props.project.isExpanded ? "fa fa-minus-circle" : "fa fa-plus-circle";
-    return (createElement("button", { className: "toggle-children-button btn btn-sm btn-default", onClick: function () { return updateProject(props.project.toggleExpandOrCollapse()); } },
+    return (createElement("button", { className: "toggle-children-button btn btn-xs btn-default", onClick: function () { return updateProject(props.project.toggleExpandOrCollapse()); } },
         createElement("i", { className: iconClass })));
 };
 var ShowProjectDetailsButton = function (props) {
     var buttonClass = props.project === props.selectedProject ? "btn-primary" : "btn-default";
-    return (createElement("button", { className: "project-name btn btn-sm " + buttonClass, onClick: function () { return selectProject(props.project); } }, props.project.name));
+    return (createElement("button", { className: "project-name btn btn-xs " + buttonClass, onClick: function () { return selectProject(props.project); } }, props.project.name));
 };
 var ProjectChildren = function (props) {
     if (!props.project.isExpanded)

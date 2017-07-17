@@ -27,12 +27,13 @@ export const Projects = (props: { rootProject: ProjectModel | null, selectedProj
 // recursive components require type annotations
 const Project: StatelessComponent<{ project: ProjectModel, selectedProject: ProjectModel | null }>
   = props => {
-  const hasChildren = props.project.hasChildren() ? "has-children" : "";
+  const { project, selectedProject } = props;
+  const hasChildren = project.hasChildren() ? "has-children" : "";
   return (
-    <li id={props.project.id} className={`project ${hasChildren}`}>
-      <ToggleProjectChildrenButton project={props.project}/>
-      <ShowProjectDetailsButton project={props.project} selectedProject={props.selectedProject}/>
-      <ProjectChildren project={props.project} selectedProject={props.selectedProject}/>
+    <li id={project.id} className={`project ${hasChildren}`}>
+      <ToggleProjectChildrenButton project={project}/>
+      <ShowProjectDetailsButton project={project} selectedProject={selectedProject}/>
+      <ProjectChildren project={project} selectedProject={selectedProject}/>
     </li>
   );
 };
@@ -40,7 +41,7 @@ const Project: StatelessComponent<{ project: ProjectModel, selectedProject: Proj
 const ToggleProjectChildrenButton = (props: { project: ProjectModel }) => {
   const iconClass = props.project.isExpanded ? "fa fa-minus-circle" : "fa fa-plus-circle";
   return (
-    <button className="toggle-children-button btn btn-sm btn-default"
+    <button className="toggle-children-button btn btn-xs btn-default"
             onClick={() => updateProject(props.project.toggleExpandOrCollapse())}>
       <i className={iconClass}/>
     </button>
@@ -50,7 +51,7 @@ const ToggleProjectChildrenButton = (props: { project: ProjectModel }) => {
 const ShowProjectDetailsButton = (props: { project: ProjectModel, selectedProject: ProjectModel | null }) => {
   const buttonClass = props.project === props.selectedProject ? "btn-primary" : "btn-default";
   return (
-    <button className={`project-name btn btn-sm ${buttonClass}`} onClick={() => selectProject(props.project)}>
+    <button className={`project-name btn btn-xs ${buttonClass}`} onClick={() => selectProject(props.project)}>
       {props.project.name}
     </button>
   );

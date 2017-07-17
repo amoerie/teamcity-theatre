@@ -1,4 +1,7 @@
 import { createElement } from "react";
+import { Tile } from "../shared/models";
+import { updateView } from "./settings.observables.views";
+import { saveView } from "./settings.observables.saved-view";
 export var SelectedProject = function (props) {
     if (props.selectedProject === null) {
         return (createElement("div", null));
@@ -39,7 +42,8 @@ var NoBuildConfigurationsWarning = function (props) {
             " This project does not have build configurations")));
 };
 var BuildConfigurationsTable = function (props) {
-    if (props.project.buildConfigurations === null)
+    var project = props.project, view = props.view;
+    if (project.buildConfigurations === null)
         return (createElement("div", { className: "panel-footer" },
             createElement("i", { className: "fa fa-spin fa-cog" }),
             " Loading build configurations"));
@@ -48,14 +52,18 @@ var BuildConfigurationsTable = function (props) {
             createElement("tr", null,
                 createElement("th", null, "Name"),
                 createElement("th", null))),
-        createElement("tbody", null, props.project.buildConfigurations.map(function (b) { return createElement(BuildConfigurationRow, { buildConfiguration: b, view: props.view }); }))));
+        createElement("tbody", null, project.buildConfigurations.map(function (b) { return createElement(BuildConfigurationRow, { buildConfiguration: b, view: view, project: project }); }))));
+};
+var handleAddTileButtonClick = function (buildConfiguration, view, project) {
+    return function () { return saveView(updateView(view.withTile(Tile.newTile(project, buildConfiguration)))); };
 };
 var BuildConfigurationRow = function (props) {
+    var buildConfiguration = props.buildConfiguration, view = props.view, project = props.project;
     return (createElement("tr", null,
-        createElement("td", null, props.buildConfiguration.name),
+        createElement("td", null, buildConfiguration.name),
         createElement("td", null,
-            createElement("button", { className: "btn btn-success btn-sm" },
+            createElement("button", { className: "btn btn-success btn-sm", onClick: handleAddTileButtonClick(buildConfiguration, view, project) },
                 createElement("i", { className: "fa fa-plus" }),
                 " Add tile to ",
-                props.view.name))));
+                view.name))));
 };
