@@ -7,22 +7,9 @@
 
   <PropertyGroup>
     <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
-    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
     <UserSecretsId>9f9e7f78-781f-4253-9ae0-08a6fe833713</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="wwwroot\css\bootstrap.min.css" />
-    <Content Include="wwwroot\css\bootstrap.min.css.map" />
-    <Content Include="wwwroot\css\dashboard.css" />
-    <Content Include="wwwroot\css\font-awesome.min.css" />
-    <Content Include="wwwroot\fonts\fontawesome-webfont.eot" />
-    <Content Include="wwwroot\fonts\fontawesome-webfont.svg" />
-    <Content Include="wwwroot\fonts\fontawesome-webfont.ttf" />
-    <Content Include="wwwroot\fonts\fontawesome-webfont.woff" />
-    <Content Include="wwwroot\fonts\fontawesome-webfont.woff2" />
-    <Content Include="wwwroot\fonts\FontAwesome.otf" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.1.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
@@ -39,9 +26,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TeamCityTheatre.Core\TeamCityTheatre.Core.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>
