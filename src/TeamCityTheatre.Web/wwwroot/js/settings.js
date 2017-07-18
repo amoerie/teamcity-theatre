@@ -1,6 +1,227 @@
 webpackJsonp([0],{
 
-/***/ 14:
+/***/ 10:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__);
+
+
+var isProduction = process && process.env && process.env.NODE_ENV === "production";
+var debug = function (name) {
+    if (isProduction)
+        return this;
+    return this
+        .do({
+        next: function (value) {
+            console.group("Next     : " + name);
+            console.dir(value);
+            console.groupEnd();
+        },
+        error: function (error) {
+            console.group("Error    : " + name);
+            console.dir(error);
+            console.groupEnd();
+        },
+        complete: function () { return console.log("Complete : " + name); }
+    });
+};
+__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].prototype.debug = debug;
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3)))
+
+/***/ }),
+
+/***/ 156:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_components__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__erroralert_components__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__settings_observables__ = __webpack_require__(285);
+
+
+
+
+
+
+var root = document.getElementById("root");
+__WEBPACK_IMPORTED_MODULE_5__settings_observables__["a" /* state */].subscribe({
+    next: function (s) { return Object(__WEBPACK_IMPORTED_MODULE_2_react_dom__["render"])(Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_3__settings_components__["a" /* Settings */], __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, s)), root); },
+    error: function (err) { return Object(__WEBPACK_IMPORTED_MODULE_2_react_dom__["render"])(Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_4__erroralert_components__["a" /* ErrorAlert */], { error: err }), root); }
+});
+
+
+/***/ }),
+
+/***/ 157:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Settings; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__settings_components_views__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_components_selected_view__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_components_projects__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_components_selected_project__ = __webpack_require__(283);
+
+
+
+
+
+var Settings = function (props) {
+    var views = props.views, deleteViewRequest = props.deleteViewRequest, selectedView = props.selectedView, rootProject = props.rootProject, selectedProject = props.selectedProject;
+    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { id: "config" },
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { id: "views-section", className: "section row" },
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "col-md-4" },
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_1__settings_components_views__["a" /* Views */], { views: views, selectedView: selectedView, deleteViewRequest: deleteViewRequest })),
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "col-md-8" },
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_2__settings_components_selected_view__["a" /* SelectedView */], { selectedView: selectedView }))),
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { id: "projects-section", className: "section row" },
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "col-md-4" },
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_3__settings_components_projects__["a" /* Projects */], { rootProject: rootProject, selectedProject: selectedProject })),
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "col-md-8" },
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_4__settings_components_selected_project__["a" /* SelectedProject */], { selectedProject: selectedProject, selectedView: selectedView })))));
+};
+
+
+/***/ }),
+
+/***/ 158:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Views; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_models__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_observables_selected_view__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_views__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_observables_save_view__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_events_onEnter__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_events_stopPropagation__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__settings_observables_delete_view__ = __webpack_require__(77);
+
+
+
+
+
+
+
+
+var Views = function (props) {
+    var views = props.views, selectedView = props.selectedView, deleteViewRequest = props.deleteViewRequest;
+    if (views === null)
+        return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", null,
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-spin fa-cog" }),
+            " Loading views"));
+    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { id: "views-wrapper" },
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "panel panel-primary" },
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "panel-heading" },
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("h2", null, "Views")),
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "panel-body" },
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", null,
+                    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(CreateViewButton, null))),
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ViewsTable, { views: views, selectedView: selectedView, deleteViewRequest: deleteViewRequest }))));
+};
+var handleCreateViewButtonClick = function () { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(__WEBPACK_IMPORTED_MODULE_1__shared_models__["d" /* View */].newView()); };
+var CreateViewButton = function (props) { return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "add-view-button btn btn-success", onClick: handleCreateViewButtonClick },
+    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-plus" }),
+    " Create a new view")); };
+var ViewsTable = function (props) {
+    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("table", { id: "views-table", className: "table table-striped" },
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("thead", null,
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("tr", null,
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("th", null, "Name"),
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("th", null, "# Branches per tile"),
+                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("th", null))),
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("tbody", null, props.views.map(function (view) { return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ViewRow, { view: view, selectedView: props.selectedView, deleteViewRequest: props.deleteViewRequest }); }))));
+};
+var ViewRow = function (props) {
+    var view = props.view, selectedView = props.selectedView, deleteViewRequest = props.deleteViewRequest;
+    var isSelected = view === selectedView;
+    var selectedClassName = isSelected ? "selected" : "";
+    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("tr", { className: "view " + selectedClassName, onClick: function () { return Object(__WEBPACK_IMPORTED_MODULE_2__settings_observables_selected_view__["a" /* selectView */])(props.view); }, onDoubleClick: function () { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(props.view.withIsEditing(true)); } },
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("td", { className: "view-name" },
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ViewName, { view: props.view })),
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("td", { className: "view-branches-per-tile" },
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(DefaultNumberOfBranchesPerTile, { view: props.view })),
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("td", null,
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ViewActions, { view: view, deleteViewRequest: deleteViewRequest }))));
+};
+var ViewName = function (props) {
+    if (props.view.isEditing)
+        return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("input", { type: "text", name: "view-name-input", className: "form-control", value: props.view.name, onClick: __WEBPACK_IMPORTED_MODULE_6__shared_events_stopPropagation__["a" /* stopPropagation */], onChange: function (event) { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(props.view.withName(event.currentTarget.value)); }, onKeyUp: Object(__WEBPACK_IMPORTED_MODULE_5__shared_events_onEnter__["a" /* onEnter */])(function () { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_save_view__["a" /* saveView */])(props.view); }) });
+    return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("span", null, props.view.name);
+};
+var DefaultNumberOfBranchesPerTile = function (props) {
+    if (props.view.isEditing)
+        return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("input", { type: "number", name: "view-branches-per-tile-input", className: "form-control", value: props.view.defaultNumberOfBranchesPerTile, onClick: __WEBPACK_IMPORTED_MODULE_6__shared_events_stopPropagation__["a" /* stopPropagation */], onChange: function (event) { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(props.view.withDefaultNumberOfBranchesPerTile(+event.currentTarget.value)); }, onKeyUp: Object(__WEBPACK_IMPORTED_MODULE_5__shared_events_onEnter__["a" /* onEnter */])(function () { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_save_view__["a" /* saveView */])(props.view); }) });
+    return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("span", null, props.view.defaultNumberOfBranchesPerTile);
+};
+var ViewActions = function (props) {
+    var view = props.view, deleteViewRequest = props.deleteViewRequest;
+    if (deleteViewRequest !== null && view === deleteViewRequest) {
+        return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", null,
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("h4", null, "Are you sure?"),
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ConfirmDeleteViewButton, { view: deleteViewRequest }),
+            " ",
+            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(CancelDeleteViewButton, null)));
+    }
+    if (view.isEditing) {
+        return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(SaveViewButton, { view: props.view });
+    }
+    return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("span", null,
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(EditViewButton, { view: props.view }),
+        " ",
+        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(DeleteViewButton, { view: props.view }));
+};
+var handleSaveViewButtonClick = function (view) { return function (event) {
+    event.stopPropagation();
+    Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_save_view__["a" /* saveView */])(view);
+}; };
+var SaveViewButton = function (props) { return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "save-view-button btn btn-success", onClick: handleSaveViewButtonClick(props.view), title: "Save" },
+    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-check" }))); };
+var handleEditViewButtonClick = function (view) { return function (event) {
+    event.stopPropagation();
+    Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(view.withIsEditing(true));
+}; };
+var EditViewButton = function (props) { return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "edit-view-button btn btn-default", onClick: handleEditViewButtonClick(props.view), title: "Edit" },
+    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-pencil" }))); };
+var handleDeleteViewButtonClick = function (view) { return function (event) {
+    event.stopPropagation();
+    Object(__WEBPACK_IMPORTED_MODULE_7__settings_observables_delete_view__["d" /* requestDeleteView */])(view);
+}; };
+var DeleteViewButton = function (props) { return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "delete-view-button btn btn-danger", onClick: handleDeleteViewButtonClick(props.view), title: "Delete" },
+    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-remove" }))); };
+var handleConfirmDeleteViewButtonClick = function (view) { return function (event) {
+    event.stopPropagation();
+    Object(__WEBPACK_IMPORTED_MODULE_7__settings_observables_delete_view__["a" /* confirmDeleteView */])(view);
+}; };
+var ConfirmDeleteViewButton = function (props) {
+    var view = props.view;
+    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "confirm-delete-view-button btn btn-danger", onClick: handleConfirmDeleteViewButtonClick(view), title: "Delete" }, "Yes, remove it"));
+};
+var handleCancelDeleteViewButtonClick = function (event) {
+    event.stopPropagation();
+    Object(__WEBPACK_IMPORTED_MODULE_7__settings_observables_delete_view__["d" /* requestDeleteView */])(null);
+};
+var CancelDeleteViewButton = function (props) { return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "cancel-delete-view-button btn btn-default", onClick: handleCancelDeleteViewButtonClick, title: "Cancel" }, "No, keep it")); };
+
+
+/***/ }),
+
+/***/ 16:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,11 +229,11 @@ webpackJsonp([0],{
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BuildConfiguration; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return View; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Tile; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_uuid__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_uuid__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_uuid___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_uuid__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__arrays_move__ = __webpack_require__(161);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__arrays_mergeById__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__arrays_move__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__arrays_mergeById__ = __webpack_require__(72);
 
 
 
@@ -171,192 +392,7 @@ var Tile = (function () {
 
 /***/ }),
 
-/***/ 15:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__ = __webpack_require__(162);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_do__);
-
-
-var isProduction = process && process.env && process.env.NODE_ENV === "production";
-var debug = function (name) {
-    if (isProduction)
-        return this;
-    return this
-        .do({
-        next: function (value) {
-            console.group("Next     : " + name);
-            console.dir(value);
-            console.groupEnd();
-        },
-        error: function (error) {
-            console.group("Error    : " + name);
-            console.dir(error);
-            console.groupEnd();
-        },
-        complete: function () { return console.log("Complete : " + name); }
-    });
-};
-__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].prototype.debug = debug;
-
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(3)))
-
-/***/ }),
-
-/***/ 155:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_components__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__erroralert_components__ = __webpack_require__(283);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__settings_observables__ = __webpack_require__(284);
-
-
-
-
-
-
-var root = document.getElementById("root");
-__WEBPACK_IMPORTED_MODULE_5__settings_observables__["a" /* state */].subscribe({
-    next: function (s) { return Object(__WEBPACK_IMPORTED_MODULE_2_react_dom__["render"])(Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_3__settings_components__["a" /* Settings */], __WEBPACK_IMPORTED_MODULE_0_tslib__["a" /* __assign */]({}, s)), root); },
-    error: function (err) { return Object(__WEBPACK_IMPORTED_MODULE_2_react_dom__["render"])(Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_4__erroralert_components__["a" /* ErrorAlert */], { error: err }), root); }
-});
-
-
-/***/ }),
-
-/***/ 156:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Settings; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__settings_components_views__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_components_selected_view__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_components_projects__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_components_selected_project__ = __webpack_require__(282);
-
-
-
-
-
-var Settings = function (props) {
-    var views = props.views, selectedView = props.selectedView, rootProject = props.rootProject, selectedProject = props.selectedProject;
-    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { id: "config" },
-        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { id: "views-section", className: "section row" },
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "col-md-4" },
-                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_1__settings_components_views__["a" /* Views */], { views: views, selectedView: selectedView })),
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "col-md-8" },
-                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_2__settings_components_selected_view__["a" /* SelectedView */], { selectedView: selectedView }))),
-        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { id: "projects-section", className: "section row" },
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "col-md-4" },
-                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_3__settings_components_projects__["a" /* Projects */], { rootProject: rootProject, selectedProject: selectedProject })),
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "col-md-8" },
-                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(__WEBPACK_IMPORTED_MODULE_4__settings_components_selected_project__["a" /* SelectedProject */], { selectedProject: selectedProject, selectedView: selectedView })))));
-};
-
-
-/***/ }),
-
-/***/ 157:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Views; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_models__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_observables_selected_view__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_views__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_observables_saved_view__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_events_onEnter__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_events_stopPropagation__ = __webpack_require__(76);
-
-
-
-
-
-
-
-var Views = function (props) {
-    if (props.views === null)
-        return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", null,
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-spin fa-cog" }),
-            " Loading views"));
-    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { id: "views-wrapper" },
-        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "panel panel-primary" },
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "panel-heading" },
-                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("h2", null, "Views")),
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", { className: "panel-body" },
-                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("div", null,
-                    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(CreateViewButton, null))),
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ViewsTable, { views: props.views, selectedView: props.selectedView }))));
-};
-var handleCreateViewButtonClick = function () { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(__WEBPACK_IMPORTED_MODULE_1__shared_models__["d" /* View */].newView()); };
-var CreateViewButton = function (props) { return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "add-view-button btn btn-success", onClick: handleCreateViewButtonClick },
-    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-plus" }),
-    " Create a new view")); };
-var ViewsTable = function (props) {
-    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("table", { id: "views-table", className: "table table-striped" },
-        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("thead", null,
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("tr", null,
-                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("th", null, "Name"),
-                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("th", null, "# Branches per tile"),
-                Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("th", null))),
-        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("tbody", null, props.views.map(function (view) { return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ViewRow, { view: view, selectedView: props.selectedView }); }))));
-};
-var ViewRow = function (props) {
-    var isSelected = props.view === props.selectedView;
-    var selectedClassName = isSelected ? "selected" : "";
-    return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("tr", { className: "view " + selectedClassName, onClick: function () { return Object(__WEBPACK_IMPORTED_MODULE_2__settings_observables_selected_view__["a" /* selectView */])(props.view); }, onDoubleClick: function () { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(props.view.withIsEditing(true)); } },
-        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("td", { className: "view-name" },
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(ViewName, { view: props.view })),
-        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("td", { className: "view-branches-per-tile" },
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(DefaultNumberOfBranchesPerTile, { view: props.view })),
-        Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("td", null,
-            props.view.isEditing ? Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(SaveViewButton, { view: props.view }) : Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(EditViewButton, { view: props.view }),
-            " ",
-            Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(DeleteViewButton, { view: props.view }))));
-};
-var ViewName = function (props) {
-    if (props.view.isEditing)
-        return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("input", { type: "text", name: "view-name-input", className: "form-control", value: props.view.name, onClick: __WEBPACK_IMPORTED_MODULE_6__shared_events_stopPropagation__["a" /* stopPropagation */], onChange: function (event) { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(props.view.withName(event.currentTarget.value)); }, onKeyUp: Object(__WEBPACK_IMPORTED_MODULE_5__shared_events_onEnter__["a" /* onEnter */])(function () { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_saved_view__["a" /* saveView */])(props.view); }) });
-    return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("span", null, props.view.name);
-};
-var DefaultNumberOfBranchesPerTile = function (props) {
-    if (props.view.isEditing)
-        return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("input", { type: "number", name: "view-branches-per-tile-input", className: "form-control", value: props.view.defaultNumberOfBranchesPerTile, onClick: __WEBPACK_IMPORTED_MODULE_6__shared_events_stopPropagation__["a" /* stopPropagation */], onChange: function (event) { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(props.view.withDefaultNumberOfBranchesPerTile(+event.currentTarget.value)); }, onKeyUp: Object(__WEBPACK_IMPORTED_MODULE_5__shared_events_onEnter__["a" /* onEnter */])(function () { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_saved_view__["a" /* saveView */])(props.view); }) });
-    return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("span", null, props.view.defaultNumberOfBranchesPerTile);
-};
-var handleSaveViewButtonClick = function (view) { return function (event) {
-    event.stopPropagation();
-    Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_saved_view__["a" /* saveView */])(view);
-}; };
-var SaveViewButton = function (props) { return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "save-view-button btn btn-success", onClick: handleSaveViewButtonClick(props.view), title: "Save" },
-    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-check" }))); };
-var handleEditViewButtonClick = function (view) { return function (event) {
-    event.stopPropagation();
-    Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(view.withIsEditing(true));
-}; };
-var EditViewButton = function (props) { return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "edit-view-button btn btn-default", onClick: handleEditViewButtonClick(props.view), title: "Edit" },
-    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-pencil" }))); };
-var DeleteViewButton = function (props) { return (Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("button", { className: "delete-view-button btn btn-danger", onClick: function () { }, title: "Delete" },
-    Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("i", { className: "fa fa-remove" }))); };
-
-
-/***/ }),
-
-/***/ 161:
+/***/ 162:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -392,19 +428,19 @@ var move = function (oldIndex, newIndex, array) {
 
 /***/ }),
 
-/***/ 168:
+/***/ 169:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* unused harmony export handleOnSortEnd */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectedView; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_sortable_hoc__ = __webpack_require__(169);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_sortable_hoc__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_sortable_hoc___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_sortable_hoc__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_views__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_observables_saved_view__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_views__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_observables_save_view__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_events_stopPropagation__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_events_onEnter__ = __webpack_require__(75);
 
@@ -414,7 +450,7 @@ var move = function (oldIndex, newIndex, array) {
 
 
 
-var handleOnSortEnd = function (view) { return function (sort) { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_saved_view__["a" /* saveView */])(Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(view.moveTile(sort.oldIndex, sort.newIndex))); }; };
+var handleOnSortEnd = function (view) { return function (sort) { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_save_view__["a" /* saveView */])(Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(view.moveTile(sort.oldIndex, sort.newIndex))); }; };
 var SelectedView = function (props) {
     var selectedView = props.selectedView;
     if (selectedView === null)
@@ -450,7 +486,7 @@ var TileRow = Object(__WEBPACK_IMPORTED_MODULE_2_react_sortable_hoc__["SortableE
 var TileLabel = function (props) {
     var view = props.view, tile = props.tile;
     if (tile.isEditing) {
-        return Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])("input", { type: "text", name: "tile-label-input", className: "form-control", value: tile.label, onClick: __WEBPACK_IMPORTED_MODULE_5__shared_events_stopPropagation__["a" /* stopPropagation */], onChange: function (e) { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(view.withTile(tile.withLabel(e.currentTarget.value))); }, onKeyUp: Object(__WEBPACK_IMPORTED_MODULE_6__shared_events_onEnter__["a" /* onEnter */])(function () { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_saved_view__["a" /* saveView */])(view); }), autoFocus: true });
+        return Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])("input", { type: "text", name: "tile-label-input", className: "form-control", value: tile.label, onClick: __WEBPACK_IMPORTED_MODULE_5__shared_events_stopPropagation__["a" /* stopPropagation */], onChange: function (e) { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(view.withTile(tile.withLabel(e.currentTarget.value))); }, onKeyUp: Object(__WEBPACK_IMPORTED_MODULE_6__shared_events_onEnter__["a" /* onEnter */])(function () { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_save_view__["a" /* saveView */])(view); }), autoFocus: true });
     }
     return Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])("span", null, tile.label);
 };
@@ -470,7 +506,7 @@ var TileActions = function (props) {
 };
 var handleSaveTileButtonClick = function (view) { return function (event) {
     event.stopPropagation();
-    Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_saved_view__["a" /* saveView */])(view);
+    Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_save_view__["a" /* saveView */])(view);
 }; };
 var SaveTileButton = function (props) {
     return (Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])("button", { className: "save-tile-button btn btn-success", onClick: handleSaveTileButtonClick(props.view), title: "Save" },
@@ -482,7 +518,7 @@ var EditTileButton = function (props) {
     return (Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])("button", { className: "edit-tile-button btn btn-default", onClick: handleEditTileButtonClick(view, tile), title: "Edit" },
         Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])("i", { className: "fa fa-pencil" })));
 };
-var handleDeleteTileButtonClick = function (view, tile) { return function () { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_saved_view__["a" /* saveView */])(Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(view.withoutTile(tile))); }; };
+var handleDeleteTileButtonClick = function (view, tile) { return function () { return Object(__WEBPACK_IMPORTED_MODULE_4__settings_observables_save_view__["a" /* saveView */])(Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["a" /* updateView */])(view.withoutTile(tile))); }; };
 var DeleteTileButton = function (props) {
     var view = props.view, tile = props.tile;
     return (Object(__WEBPACK_IMPORTED_MODULE_1_react__["createElement"])("button", { className: "delete-tile-button btn btn-danger", onClick: handleDeleteTileButtonClick(view, tile), title: "Delete" },
@@ -492,7 +528,7 @@ var DeleteTileButton = function (props) {
 
 /***/ }),
 
-/***/ 28:
+/***/ 20:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -501,26 +537,28 @@ var DeleteTileButton = function (props) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return views; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_operators_debug__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_defer__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_operators_debug__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_defer__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_defer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_defer__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_dom_ajax__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_dom_ajax__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_dom_ajax___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_dom_ajax__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_scan__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_scan__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_scan___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_scan__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_startWith__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_startWith__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_startWith__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_switchMap__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_switchMap__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_models__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__settings_observables_saved_view__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__shared_arrays_mergeById__ = __webpack_require__(71);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_models__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__settings_observables_save_view__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__shared_arrays_mergeById__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__settings_observables_delete_view__ = __webpack_require__(77);
+
 
 
 
@@ -536,11 +574,13 @@ var DeleteTileButton = function (props) {
 
 var updatedViewsSubject = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
 var updateView = function (view) { updatedViewsSubject.next(view); return view; };
-var updatedViews = updatedViewsSubject.merge(__WEBPACK_IMPORTED_MODULE_11__settings_observables_saved_view__["b" /* savedViews */]).debug("Update view");
-var initialViews = __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].defer(function () { return __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].ajax.getJSON("api/views"); })
-    .debug("Initial views")
+var updatedViews = updatedViewsSubject.merge(__WEBPACK_IMPORTED_MODULE_11__settings_observables_save_view__["b" /* savedViews */]).debug("Update view");
+var initialViews = __WEBPACK_IMPORTED_MODULE_13__settings_observables_delete_view__["c" /* deletedViews */] // every time a view is deleted, we fetch the list of views again
+    .startWith({})
+    .switchMap(function () { return __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].ajax.getJSON("api/views"); })
     .map(function (vs) { return vs.map(__WEBPACK_IMPORTED_MODULE_10__shared_models__["d" /* View */].fromContract); })
-    .startWith([]);
+    .startWith([])
+    .debug("Initial views");
 var views = initialViews.switchMap(function (initialVs) {
     return updatedViews
         .scan(function (previousViews, updatedView) { return Object(__WEBPACK_IMPORTED_MODULE_12__shared_arrays_mergeById__["a" /* mergeById */])(updatedView, previousViews); }, initialVs)
@@ -551,15 +591,15 @@ var views = initialViews.switchMap(function (initialVs) {
 
 /***/ }),
 
-/***/ 281:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Projects; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__settings_observables_selected_project__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_observables_projects__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__settings_observables_selected_project__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_observables_projects__ = __webpack_require__(96);
 
 
 
@@ -606,16 +646,16 @@ var ProjectChildren = function (props) {
 
 /***/ }),
 
-/***/ 282:
+/***/ 283:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectedProject; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_models__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_observables_views__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_saved_view__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_models__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__settings_observables_views__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_save_view__ = __webpack_require__(30);
 
 
 
@@ -673,7 +713,7 @@ var BuildConfigurationsTable = function (props) {
         Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])("tbody", null, project.buildConfigurations.map(function (b) { return Object(__WEBPACK_IMPORTED_MODULE_0_react__["createElement"])(BuildConfigurationRow, { buildConfiguration: b, view: view, project: project }); }))));
 };
 var handleAddTileButtonClick = function (buildConfiguration, view, project) {
-    return function () { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_saved_view__["a" /* saveView */])(Object(__WEBPACK_IMPORTED_MODULE_2__settings_observables_views__["a" /* updateView */])(view.withTile(__WEBPACK_IMPORTED_MODULE_1__shared_models__["c" /* Tile */].newTile(project, buildConfiguration)))); };
+    return function () { return Object(__WEBPACK_IMPORTED_MODULE_3__settings_observables_save_view__["a" /* saveView */])(Object(__WEBPACK_IMPORTED_MODULE_2__settings_observables_views__["a" /* updateView */])(view.withTile(__WEBPACK_IMPORTED_MODULE_1__shared_models__["c" /* Tile */].newTile(project, buildConfiguration)))); };
 };
 var BuildConfigurationRow = function (props) {
     var buildConfiguration = props.buildConfiguration, view = props.view, project = props.project;
@@ -689,7 +729,7 @@ var BuildConfigurationRow = function (props) {
 
 /***/ }),
 
-/***/ 283:
+/***/ 284:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -709,20 +749,21 @@ var ErrorAlert = function (props) {
 
 /***/ }),
 
-/***/ 284:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return state; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_operators_debug__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_combineLatest__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_operators_debug__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_combineLatest__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_combineLatest___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_combineLatest__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_views__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_observables_selected_view__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__settings_observables_projects__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__settings_observables_selected_project__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_views__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__settings_observables_delete_view__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__settings_observables_selected_view__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__settings_observables_projects__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__settings_observables_selected_project__ = __webpack_require__(58);
 
 
 
@@ -730,8 +771,10 @@ var ErrorAlert = function (props) {
 
 
 
-var state = __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].combineLatest(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["c" /* views */], __WEBPACK_IMPORTED_MODULE_4__settings_observables_selected_view__["b" /* selectedViews */], __WEBPACK_IMPORTED_MODULE_5__settings_observables_projects__["a" /* rootProjects */], __WEBPACK_IMPORTED_MODULE_6__settings_observables_selected_project__["b" /* selectedProjects */], function (vs, sv, rp, sp) { return ({
+
+var state = __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].combineLatest(__WEBPACK_IMPORTED_MODULE_3__settings_observables_views__["c" /* views */], __WEBPACK_IMPORTED_MODULE_4__settings_observables_delete_view__["b" /* deleteViewRequests */], __WEBPACK_IMPORTED_MODULE_5__settings_observables_selected_view__["b" /* selectedViews */], __WEBPACK_IMPORTED_MODULE_6__settings_observables_projects__["a" /* rootProjects */], __WEBPACK_IMPORTED_MODULE_7__settings_observables_selected_project__["b" /* selectedProjects */], function (vs, dvr, sv, rp, sp) { return ({
     views: vs,
+    deleteViewRequest: dvr,
     selectedView: sv,
     rootProject: rp,
     selectedProject: sp
@@ -741,7 +784,7 @@ var state = __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].combineL
 
 /***/ }),
 
-/***/ 44:
+/***/ 30:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -749,18 +792,18 @@ var state = __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].combineL
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return savedViews; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_dom_ajax__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_dom_ajax__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_dom_ajax___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_dom_ajax__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_startWith__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_startWith__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_startWith__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_operators_debug__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_models__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_operators_debug__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_models__ = __webpack_require__(16);
 
 
 
@@ -782,7 +825,7 @@ var savedViews = savedViewsSubject
 
 /***/ }),
 
-/***/ 57:
+/***/ 58:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -790,20 +833,20 @@ var savedViews = savedViewsSubject
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return selectedProjects; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_operators_debug__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_dom_ajax__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_operators_debug__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_dom_ajax__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_dom_ajax___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_dom_ajax__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_share__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_share__ = __webpack_require__(45);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_startWith__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_startWith__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_startWith__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_models__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_models__ = __webpack_require__(16);
 
 
 
@@ -826,7 +869,7 @@ var selectedProjects = selectedProjectsSubject
 
 /***/ }),
 
-/***/ 71:
+/***/ 72:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -853,18 +896,18 @@ var mergeById = function (updatedElement, array) {
 
 /***/ }),
 
-/***/ 72:
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return selectView; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return selectedViews; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_operators_debug__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_startWith__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_operators_debug__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_startWith__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_startWith__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_views__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings_observables_views__ = __webpack_require__(20);
 
 
 
@@ -908,7 +951,53 @@ var stopPropagation = function (event) { return event.stopPropagation(); };
 
 /***/ }),
 
-/***/ 95:
+/***/ 77:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return requestDeleteView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return deleteViewRequests; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return confirmDeleteView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return deletedViews; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_dom_ajax__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_dom_ajax___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_dom_ajax__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_share__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_startWith__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_startWith__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_operators_debug__ = __webpack_require__(10);
+
+
+
+
+
+
+
+
+var requestDeleteViewSubject = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
+var requestDeleteView = function (view) { return requestDeleteViewSubject.next(view); };
+var deleteViewRequests = requestDeleteViewSubject.startWith(null);
+var confirmDeleteViewSubject = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__["Subject"]();
+var confirmDeleteView = function (view) { return confirmDeleteViewSubject.next(view); };
+var deletedViews = confirmDeleteViewSubject
+    .switchMap(function (view) { return __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["Observable"].ajax
+    .delete("api/views/" + view.id)
+    .map(function (xhr) { return view; }); })
+    .debug("Deleted view")
+    .share();
+
+
+/***/ }),
+
+/***/ 96:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -916,25 +1005,25 @@ var stopPropagation = function (event) { return event.stopPropagation(); };
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return rootProjects; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_operators_debug__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_defer__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_operators_debug__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_defer__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_defer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_defer__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_dom_ajax__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_dom_ajax__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_dom_ajax___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_dom_ajax__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_scan__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_scan__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_scan___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_scan__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_startWith__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_startWith__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_startWith___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_startWith__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_switchMap__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_switchMap__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_models__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__settings_observables_selected_project__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_models__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__settings_observables_selected_project__ = __webpack_require__(58);
 
 
 
@@ -976,4 +1065,4 @@ var rootProjects = initialRootProjects.switchMap(function (initialRootProject) {
 
 /***/ })
 
-},[155]);
+},[156]);

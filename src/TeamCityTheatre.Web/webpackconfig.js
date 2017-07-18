@@ -1,9 +1,17 @@
 ﻿const webpack = require("webpack");
 const path = require("path");
 
-module.exports = function(env) {
+module.exports = function (env) {
   const isProduction = env === "production";
   return {
+    stats: {
+      chunks: false,
+      hash: false,
+      modules: isProduction,
+      moduleTrace: isProduction,
+      version: isProduction,
+      providedExports: true
+    },
     entry: {
       "dashboard": "./views/home/dashboard.js",
       "settings": "./views/home/settings.js"

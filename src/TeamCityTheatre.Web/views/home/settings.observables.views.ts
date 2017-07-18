@@ -13,17 +13,20 @@ import "rxjs/add/operator/switchMap";
 
 import {IView} from "../shared/contracts";
 import {View} from "../shared/models";
-import {savedViews} from "./settings.observables.saved-view";
+import {savedViews} from "./settings.observables.save-view";
 import {mergeById} from "../shared/arrays/mergeById";
+import {deletedViews} from "./settings.observables.delete-view";
 
 const updatedViewsSubject = new Subject<View>();
 export const updateView = (view: View) => { updatedViewsSubject.next(view); return view };
 export const updatedViews: Observable<View> = updatedViewsSubject.merge(savedViews).debug("Update view");
 
-const initialViews : Observable<View[]> = Observable.defer(() => Observable.ajax.getJSON<IView[]>("api/views"))
-  .debug("Initial views")
+const initialViews : Observable<View[]> = deletedViews // every time a view is deleted, we fetch the list of views again
+  .startWith({})
+  .switchMap(() => Observable.ajax.getJSON<IView[]>("api/views"))
   .map(vs => vs.map(View.fromContract))
-  .startWith([]);
+  .startWith([])
+  .debug("Initial views");
 
 export const views: Observable<View[]> = initialViews.switchMap(initialVs =>
   updatedViews

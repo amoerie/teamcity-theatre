@@ -14,53 +14,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.observables.views.ts" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.observables.views.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/home/settings.observables.views.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+            <state relative-caret-position="237">
+              <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.observables.saved-view.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home/settings.observables.saved-view.ts">
+      <file leaf-file-name="settings.observables.save-view.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/home/settings.observables.save-view.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
+            <state relative-caret-position="119">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.observables.projects.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home/settings.observables.projects.ts">
+      <file leaf-file-name="webpackconfig.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webpackconfig.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+            <state relative-caret-position="238">
+              <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="32" column="45" lean-forward="false" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.components.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/home/settings.components.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
+                <element signature="e#0#36#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.components.projects.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home/settings.components.projects.tsx">
+      <file leaf-file-name="settings.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/home/settings.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="50" column="48" lean-forward="false" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.observables.selected-project.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home/settings.observables.selected-project.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+            <state relative-caret-position="85">
+              <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -69,48 +79,20 @@
       <file leaf-file-name="settings.components.views.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/home/settings.components.views.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/shared/models.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2380">
-              <caret line="166" column="19" lean-forward="false" selection-start-line="166" selection-start-column="19" selection-end-line="166" selection-end-column="19" />
+            <state relative-caret-position="1325">
+              <caret line="146" column="11" lean-forward="true" selection-start-line="146" selection-start-column="11" selection-end-line="146" selection-end-column="11" />
               <folding>
-                <element signature="e#0#88#0" expanded="true" />
-                <element signature="n#!!block;n#setChildren#0;n#Project#0" expanded="false" />
-                <element signature="n#!!block;n#expand#0;n#Project#0" expanded="false" />
-                <element signature="n#!!block;n#collapse#0;n#Project#0" expanded="false" />
-                <element signature="n#!!block;n#toggleExpandOrCollapse#0;n#Project#0" expanded="false" />
-                <element signature="n#!!block;n#update#0;n#Project#0" expanded="false" />
-                <element signature="n#!!block;n#hasChildren#0;n#Project#0" expanded="false" />
+                <element signature="e#0#61#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.components.selected-project.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home/settings.components.selected-project.tsx">
+      <file leaf-file-name="settings.observables.delete-view.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/home/settings.observables.delete-view.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1309">
-              <caret line="80" column="4" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.observables.selected-view.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/home/settings.observables.selected-view.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -118,11 +100,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.components.selected-view.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.observables.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/home/settings.observables.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.components.selected-view.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/home/settings.components.selected-view.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+            <state relative-caret-position="102">
+              <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -141,25 +135,23 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>empty</find>
-      <find>class=</find>
       <find>class=&quot;</find>
       <find>IBasicProjec</find>
       <find>console.log</find>
       <find>update</find>
       <find>combineLa</find>
       <find>KeyboardEvent</find>
+      <find>lodash</find>
+      <find>class=</find>
     </findStrings>
     <replaceStrings>
-      <replace>className=</replace>
       <replace>className=&quot;</replace>
+      <replace>className=</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/App/Models.ts" />
-        <option value="$PROJECT_DIR$/App/Dashboard.Core.ts" />
-        <option value="$PROJECT_DIR$/App/Settings.Core.ts" />
         <option value="$PROJECT_DIR$/compile-less.js" />
         <option value="$PROJECT_DIR$/App/dashboard.less" />
         <option value="$PROJECT_DIR$/wwwroot/css/dashboard.css" />
@@ -180,14 +172,11 @@
         <option value="$PROJECT_DIR$/views/home/error.component.tsx.ts" />
         <option value="$PROJECT_DIR$/views/home/error.component.tsx" />
         <option value="$PROJECT_DIR$/views/home/settings.tsx" />
-        <option value="$PROJECT_DIR$/webpackconfig.js" />
         <option value="$PROJECT_DIR$/views/home/dashboard.components.tsx" />
         <option value="$PROJECT_DIR$/views/shared/operators/debug.d.ts" />
         <option value="$PROJECT_DIR$/views/shared/operators/debug.ts" />
-        <option value="$PROJECT_DIR$/views/home/settings.observables.ts" />
         <option value="$PROJECT_DIR$/views/home/erroralert.components.tsx" />
         <option value="$PROJECT_DIR$/views/shared/contracts.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/views/home/settings.observables.projects.ts" />
         <option value="$PROJECT_DIR$/views/shared/events/onEnter.ts" />
@@ -196,18 +185,24 @@
         <option value="$PROJECT_DIR$/views/home/settings.observables.saved-view.ts" />
         <option value="$PROJECT_DIR$/views/shared/arrays/swap.ts" />
         <option value="$PROJECT_DIR$/views/home/settings.observables.selected-project.ts" />
-        <option value="$PROJECT_DIR$/views/home/settings.components.tsx" />
         <option value="$PROJECT_DIR$/views/shared/arrays/applyUpdates.ts" />
         <option value="$PROJECT_DIR$/views/shared/arrays/merge.ts" />
         <option value="$PROJECT_DIR$/views/shared/arrays/applyUpdate.ts" />
         <option value="$PROJECT_DIR$/views/shared/arrays/mergeById.ts" />
-        <option value="$PROJECT_DIR$/views/home/settings.observables.views.ts" />
-        <option value="$PROJECT_DIR$/views/home/settings.components.views.tsx" />
         <option value="$PROJECT_DIR$/views/home/settings.pcss" />
         <option value="$PROJECT_DIR$/views/home/settings.components.projects.tsx" />
         <option value="$PROJECT_DIR$/views/home/settings.components.selected-project.tsx" />
         <option value="$PROJECT_DIR$/views/shared/models.ts" />
         <option value="$PROJECT_DIR$/views/home/settings.components.selected-view.tsx" />
+        <option value="$PROJECT_DIR$/views/home/settings.observables.delete-view.ts" />
+        <option value="$PROJECT_DIR$/views/home/settings.observables.ts" />
+        <option value="$PROJECT_DIR$/views/home/settings.components.delete-view.tsx.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/webpackconfig.js" />
+        <option value="$PROJECT_DIR$/views/home/settings.components.delete-view.tsx" />
+        <option value="$PROJECT_DIR$/views/home/settings.components.tsx" />
+        <option value="$PROJECT_DIR$/views/home/settings.components.views.tsx" />
+        <option value="$PROJECT_DIR$/views/home/settings.observables.views.ts" />
       </list>
     </option>
   </component>
@@ -255,7 +250,28 @@
     <panes>
       <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TeamCityTheatre.Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamCityTheatre.Web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeamCityTheatre.Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamCityTheatre.Web" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TeamCityTheatre.Web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TeamCityTheatre.Web" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -264,8 +280,11 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="javascript.nodejs.core.library.configured.version" value="7.10.0" />
-    <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.tslint" />
     <property name="typescript-compiler-editor-notification" value="false" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.tslint" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -351,20 +370,20 @@
       <recursive>false</recursive>
       <method />
     </configuration>
+    <configuration name="build:debug" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:debug" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
     <configuration name="build:release" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="build:release" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-    </configuration>
-    <configuration name="prod" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="prod" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -398,18 +417,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="npm.ts" />
-      <item index="1" class="java.lang.String" itemvalue="npm.prod" />
-      <item index="2" class="java.lang.String" itemvalue="npm.watch:js" />
-      <item index="3" class="java.lang.String" itemvalue="npm.build:release" />
-      <item index="4" class="java.lang.String" itemvalue="npm.watch:pcss" />
+      <item index="1" class="java.lang.String" itemvalue="npm.watch:js" />
+      <item index="2" class="java.lang.String" itemvalue="npm.build:release" />
+      <item index="3" class="java.lang.String" itemvalue="npm.watch:pcss" />
+      <item index="4" class="java.lang.String" itemvalue="npm.build:debug" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.watch:pcss" />
-        <item index="1" class="java.lang.String" itemvalue="npm.watch:js" />
-        <item index="2" class="java.lang.String" itemvalue="npm.ts" />
+        <item index="0" class="java.lang.String" itemvalue="npm.watch:js" />
+        <item index="1" class="java.lang.String" itemvalue="npm.build:debug" />
+        <item index="2" class="java.lang.String" itemvalue="npm.watch:pcss" />
         <item index="3" class="java.lang.String" itemvalue="npm.build:release" />
-        <item index="4" class="java.lang.String" itemvalue="npm.prod" />
+        <item index="4" class="java.lang.String" itemvalue="npm.ts" />
       </list>
     </recent_temporary>
   </component>
@@ -452,34 +471,34 @@
       <workItem from="1500278324423" duration="20106000" />
       <workItem from="1500362568284" duration="131000" />
       <workItem from="1500362710594" duration="117000" />
-      <workItem from="1500378677657" duration="37000" />
+      <workItem from="1500378677657" duration="4647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78668000" />
+    <option name="totallyTimeSpent" value="83278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3451001" sideWeight="0.63470757" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3451001" sideWeight="0.36529243" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20042644" sideWeight="0.36744186" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38159156" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3240652" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32981783" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20042644" sideWeight="0.63255817" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -488,7 +507,6 @@
     <option name="exactExcludedFiles">
       <list>
         <option value="$PROJECT_DIR$/views/home/settings.observables.views.js" />
-        <option value="$PROJECT_DIR$/views/home/settings.observables.saved-view.js" />
         <option value="$PROJECT_DIR$/views/home/settings.observables.projects.js" />
         <option value="$PROJECT_DIR$/views/home/settings.observables.selected-project.js" />
         <option value="$PROJECT_DIR$/views/shared/models.js" />
@@ -510,6 +528,8 @@
         <option value="$PROJECT_DIR$/views/home/settings.components.selected-view.js" />
         <option value="$PROJECT_DIR$/views/home/dashboard.components.js" />
         <option value="$PROJECT_DIR$/views/home/dashboard.js" />
+        <option value="$PROJECT_DIR$/views/home/settings.observables.delete-view.js" />
+        <option value="$PROJECT_DIR$/views/home/settings.components.delete-view.js" />
       </list>
     </option>
   </component>
@@ -523,34 +543,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/operator/startWith.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/add/operator/startWith.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="44" lean-forward="true" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/shared/operators/debug.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="33" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/rxjs/operator/do.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="36" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/rxjs/add/operator/do.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -590,13 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="3929" column="20" lean-forward="false" selection-start-line="3929" selection-start-column="20" selection-end-line="3929" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/home/settings.observables.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -647,13 +632,6 @@
         <state relative-caret-position="1666">
           <caret line="103" column="4" lean-forward="false" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -735,13 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/home/settings.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/react-sortable-hoc/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
@@ -753,16 +724,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="93" column="17" lean-forward="false" selection-start-line="93" selection-start-column="17" selection-end-line="93" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/home/settings.components.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,20 +779,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/home/settings.observables.views.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/home/settings.observables.projects.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -840,22 +793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="50" column="48" lean-forward="false" selection-start-line="50" selection-start-column="48" selection-end-line="50" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/home/settings.observables.saved-view.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="43" lean-forward="false" selection-start-line="0" selection-start-column="43" selection-end-line="0" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/home/settings.components.views.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -906,8 +843,104 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/home/settings.components.selected-view.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="62" column="24" lean-forward="true" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
+        <state relative-caret-position="102">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/settings.observables.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="30" lean-forward="false" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yarn.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="1940" column="0" lean-forward="false" selection-start-line="1940" selection-start-column="0" selection-end-line="1940" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/settings.observables.save-view.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="32" column="45" lean-forward="false" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/settings.components.delete-view.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/settings.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/settings.components.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpackconfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/settings.components.views.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1325">
+          <caret line="146" column="11" lean-forward="true" selection-start-line="146" selection-start-column="11" selection-end-line="146" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/settings.observables.delete-view.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="52" lean-forward="true" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/home/settings.observables.views.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
           <folding />
         </state>
       </provider>

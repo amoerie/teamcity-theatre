@@ -2,7 +2,7 @@ import {ChangeEvent, createElement} from "react";
 import {SortableContainer, SortableElement, SortableHandle, SortEnd} from "react-sortable-hoc";
 import {Tile, View} from "../shared/models";
 import {updateView} from "./settings.observables.views";
-import {saveView} from "./settings.observables.saved-view";
+import {saveView} from "./settings.observables.save-view";
 import {stopPropagation} from "../shared/events/stopPropagation";
 import {onEnter} from "../shared/events/onEnter";
 

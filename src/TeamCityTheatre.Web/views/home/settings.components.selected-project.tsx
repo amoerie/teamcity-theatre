@@ -1,7 +1,7 @@
 import {createElement} from "react";
 import {BuildConfiguration, Project, Tile, View} from "../shared/models";
 import {updateView} from "./settings.observables.views";
-import {saveView} from "./settings.observables.saved-view";
+import {saveView} from "./settings.observables.save-view";
 
 export const SelectedProject = (props: { selectedProject: Project | null, selectedView: View | null }) => {
   if (props.selectedProject === null) {

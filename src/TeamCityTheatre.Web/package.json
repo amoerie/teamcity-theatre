@@ -30,7 +30,7 @@
   "scripts": {
     "clean": "rimraf views/**/*.js views/**/*.js.map",
     "ts": "tsc --pretty",
-    "js": "webpack --config=webpackconfig.js --progress --colors",
+    "js": "webpack --config=webpackconfig.js --colors",
     "pcss": "postcss views/**/*.pcss --use postcss-nested --dir wwwroot/css --ext=.css --no-map true",
     "watch:ts": "npm run ts -- --watch",
     "watch:js": "npm run js -- --watch=true",

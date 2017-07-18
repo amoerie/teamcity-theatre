@@ -2,7 +2,7 @@ import * as tslib_1 from "tslib";
 import { createElement } from "react";
 import { SortableContainer, SortableElement, SortableHandle } from "react-sortable-hoc";
 import { updateView } from "./settings.observables.views";
-import { saveView } from "./settings.observables.saved-view";
+import { saveView } from "./settings.observables.save-view";
 import { stopPropagation } from "../shared/events/stopPropagation";
 import { onEnter } from "../shared/events/onEnter";
 export var handleOnSortEnd = function (view) { return function (sort) { return saveView(updateView(view.moveTile(sort.oldIndex, sort.newIndex))); }; };

@@ -3,14 +3,14 @@ import {Views} from "./settings.components.views";
 import {SelectedView} from "./settings.components.selected-view";
 import {Projects} from "./settings.components.projects";
 import {SelectedProject} from "./settings.components.selected-project";
-import {Project, View} from "../shared/models";
+import {ISettingsState} from "./settings.observables";
 
-export const Settings = (props: { views: View[] | null, selectedView: View | null, rootProject: Project | null, selectedProject: Project | null }) => {
-  const { views, selectedView, rootProject, selectedProject } = props;
+export const Settings = (props: ISettingsState) => {
+  const { views, deleteViewRequest, selectedView, rootProject, selectedProject } = props;
   return (
     <div id="config">
       <div id="views-section" className="section row">
-        <div className="col-md-4"><Views views={views} selectedView={selectedView}/></div>
+        <div className="col-md-4"><Views views={views} selectedView={selectedView} deleteViewRequest={deleteViewRequest}/></div>
         <div className="col-md-8"><SelectedView selectedView={selectedView}/></div>
       </div>
       <div id="projects-section" className="section row">
