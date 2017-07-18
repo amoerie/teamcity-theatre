@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamCityTheatre.Web", "TeamCityTheatre.Web\TeamCityTheatre.Web.csproj", "{5238600C-2527-490A-93CF-E4EEFFB32132}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamCityTheatre.Web", "TeamCityTheatre.Web\TeamCityTheatre.Web.csproj", "{5238600C-2527-490A-93CF-E4EEFFB32132}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4C7C7030-1DE1-44C9-AA4D-60ED6A73939F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamCityTheatre.Core", "TeamCityTheatre.Core\TeamCityTheatre.Core.csproj", "{F81CDFDC-82C1-43A2-BE68-ACA1283D680B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamCityTheatre.Core", "TeamCityTheatre.Core\TeamCityTheatre.Core.csproj", "{F81CDFDC-82C1-43A2-BE68-ACA1283D680B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +17,6 @@ Global
 		{5238600C-2527-490A-93CF-E4EEFFB32132}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5238600C-2527-490A-93CF-E4EEFFB32132}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5238600C-2527-490A-93CF-E4EEFFB32132}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C7C7030-1DE1-44C9-AA4D-60ED6A73939F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C7C7030-1DE1-44C9-AA4D-60ED6A73939F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C7C7030-1DE1-44C9-AA4D-60ED6A73939F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C7C7030-1DE1-44C9-AA4D-60ED6A73939F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F81CDFDC-82C1-43A2-BE68-ACA1283D680B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F81CDFDC-82C1-43A2-BE68-ACA1283D680B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F81CDFDC-82C1-43A2-BE68-ACA1283D680B}.Release|Any CPU.ActiveCfg = Release|Any CPU
