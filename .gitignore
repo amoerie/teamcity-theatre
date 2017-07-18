@@ -248,6 +248,15 @@ fabric.properties
 # *.ipr
 
 # Sonarlint plugin
-.idea/sonarlint
-src/TeamCityTheatre.Web/.idea/workspace.xml
-src/TeamCityTheatre.Web/.idea/workspace.xml
+.idea
+workspace.xml
+
+### Don't include generated CSS in source control
+src/TeamCityTheatre.Web/wwwroot/css
+!src/TeamCityTheatre.Web/wwwroot/css/bootstrap.min.css
+!src/TeamCityTheatre.Web/wwwroot/css/font-awesome.min.css
+
+### Don't include generated JS in source control
+src/TeamCityTheatre.Web/wwwroot/js
+
+
