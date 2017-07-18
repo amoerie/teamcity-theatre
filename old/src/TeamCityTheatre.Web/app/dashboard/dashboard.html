@@ -1,5 +1,0 @@
-﻿<div id="views" ng-controller="dashboardController as vm">
-  <a class="btn btn-primary view" id="{{ view.id }}" ng-repeat="view in vm.views" ng-href="dashboard/{{view.name.toLowerCase()}}">
-    {{ view.name }} <span class="badge">{{ view.tiles.length }} tiles</span>
-  </a>
-</div>
