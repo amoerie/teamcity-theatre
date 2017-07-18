@@ -10,7 +10,7 @@ const string sourcePath = "./src";
 const string solutionFilePath = sourcePath + "/TeamCityTheatre.sln";
 
 const string webProjectFolderPath = sourcePath + "/TeamCityTheatre.Web";
-const string webCsProjPath = identityProviderWebProjectFolderPath + "/TeamCityTheatre.Web.csproj";
+const string webCsProjPath = webProjectFolderPath + "/TeamCityTheatre.Web.csproj";
 
 string target = Argument<string>("target", "");
 
