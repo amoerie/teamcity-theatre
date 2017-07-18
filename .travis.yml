@@ -3,6 +3,14 @@ solution: src/TeamCityTheatre.sln
 mono: none
 dotnet: 1.0.4
 dist: trusty
+sudo: required
+addons:
+  apt:
+    packages:
+    - gettext
+    - libcurl4-openssl-dev
+    - libicu-dev
+    - libssl-dev
+    - libunwind8
 script:
- - dotnet restore src/TeamCityTheatre.sln
- - dotnet publish src/TeamCityTheatre.sln --configuration Release
+ - ./build.sh --target publish --verbosity diagnostic
