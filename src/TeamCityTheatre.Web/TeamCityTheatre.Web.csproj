@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
     <TypeScriptCompileBlocked>True</TypeScriptCompileBlocked>
+    <EnableDefaultContentItems>False</EnableDefaultContentItems>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -27,5 +28,9 @@
   <ItemGroup>
     <ProjectReference Include="..\TeamCityTheatre.Core\TeamCityTheatre.Core.csproj" />
   </ItemGroup>
-
+  
+  <ItemGroup>
+    <Content Include="wwwroot\**\*" CopyToPublishDirectory="Always" />
+    <Content Include="views\**\*.cshtml" CopyToPublishDirectory="Always" />
+  </ItemGroup>
 </Project>
