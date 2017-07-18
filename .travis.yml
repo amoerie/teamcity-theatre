@@ -5,4 +5,4 @@ dotnet: 1.0.4
 dist: trusty
 script:
  - dotnet restore src/TeamCityTheatre.sln
- - dotnet publish src/TeamCityTheatre.sln
+ - dotnet publish src/TeamCityTheatre.sln --configuration Release
