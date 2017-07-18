@@ -114,6 +114,7 @@ Task("CreateIISApplicationPool")
 
 Task("CreateIISApplication")
   .Description("Creates an application in IIS for TeamCityTheatre")
+  .IsDependentOn("RemoveIISApplicationPoolIfExists")
   .IsDependentOn("Publish")
   .IsDependentOn("CreateIISApplicationPool")
   .Does(() => AddSiteApplication(applicationSettings));
