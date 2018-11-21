@@ -8,7 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "date-fns": "^1.29.0",
-    "react": "^15.6.1",
+    "react": "^16.6.3",
     "react-dom": "^15.6.1",
     "react-sortable-hoc": "^0.6.7",
     "rxjs": "^6.1.0",
@@ -43,7 +43,7 @@
   "resolutions": {
     "@types/react": "15.6.15",
     "@types/react-dom": "15.5.7",
-    "react": "15.6.2",
+    "react": "16.6.3",
     "react-dom": "15.6.2"
   }
 }
