@@ -21,11 +21,12 @@
   version "8.10.14"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.14.tgz#a24767cfa22023f1bf7e751c0ead56a14c07ed45"
 
-"@types/react-dom@15.5.7", "@types/react-dom@^15.5.3":
-  version "15.5.7"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-15.5.7.tgz#a5c1c8b315e925d84d59db5ee88ca7e31c5030f9"
+"@types/react-dom@16.0.10", "@types/react-dom@^16.0.10":
+  version "16.0.10"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.10.tgz#0c8980a639fa1d92a8547c8b6d0cf47af96c8966"
   dependencies:
-    "@types/react" "^15"
+    "@types/node" "*"
+    "@types/react" "*"
 
 "@types/react-sortable-hoc@^0.6.0":
   version "0.6.3"
@@ -33,7 +34,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@15.6.15", "@types/react@^15", "@types/react@^15.6.1":
+"@types/react@*", "@types/react@15.6.15", "@types/react@^15.6.1":
   version "15.6.15"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-15.6.15.tgz#1856f932120311aa566f91e6d0c6e613d6448236"
 
