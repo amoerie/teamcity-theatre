@@ -21,20 +21,18 @@ namespace TeamCityTheatre.Core.Repositories {
     }
 
     public Configuration GetConfiguration() {
-      EnsureConfigurationFileExists();
-      return JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(_configurationFile.FullName)) ?? new Configuration();
+      if(!File.Exists(_configurationFile.FullName))
+        return new Configuration();
+      var configurationFileContents = File.ReadAllText(_configurationFile.FullName);
+      return JsonConvert.DeserializeObject<Configuration>(configurationFileContents);
     }
 
     public void SaveConfiguration(Configuration configuration) {
-      EnsureConfigurationFileExists();
-      File.WriteAllText(_configurationFile.FullName, JsonConvert.SerializeObject(configuration, Formatting.Indented));
-    }
-
-    void EnsureConfigurationFileExists() {
-      if (!_workspace.Exists)
-        _workspace.Create();
-      if (!_configurationFile.Exists)
-        _configurationFile.Create().Dispose();
+      if (!_workspace.Exists) _workspace.Create();
+      
+      var configurationFileContents = JsonConvert.SerializeObject(configuration, Formatting.Indented);
+      
+      File.WriteAllText(_configurationFile.FullName, configurationFileContents);
     }
   }
 }

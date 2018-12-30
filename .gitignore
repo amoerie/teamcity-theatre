@@ -268,6 +268,10 @@ tools/
 
 /.dotnet
 /src/.vs
-/src/TeamCityTheatre.Web/appsettings.secrets.json
 /src/TeamCityTheatre.Web/data
 /src/TeamCityTheatre.Web/logs
+
+### Docker related data
+docker/logs
+docker/data
+docker.env
