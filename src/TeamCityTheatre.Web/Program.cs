@@ -1,14 +1,18 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RestSharp.Validation;
 using Serilog;
+using TeamCityTheatre.Core.Options;
 
 namespace TeamCityTheatre.Web {
     public class Program {
         public static void Main(string[] args) {
             var environment = Environment();
             var configuration = BuildConfiguration(args, environment);
+            ValidateConfiguration(configuration);
             var logger = BuildLogger(configuration);
 
             BuildWebHost(args, configuration, logger).Run();
@@ -38,10 +42,8 @@ namespace TeamCityTheatre.Web {
                 .SetBasePath(Directory.GetCurrentDirectory());
 
             config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            config.AddJsonFile("appsettings.secrets.json", optional: true, reloadOnChange: true);
 
-            // see https://stackoverflow.com/questions/31049152/publish-to-iis-setting-environment-variable
-            config.AddEnvironmentVariables();
+            config.AddEnvironmentVariables("TEAMCITYTHEATRE_");
 
             if (args != null) {
                 config.AddCommandLine(args);
@@ -52,5 +54,21 @@ namespace TeamCityTheatre.Web {
 
         static string Environment() => System.Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")
                                        ?? EnvironmentName.Production;
+
+        static void ValidateConfiguration(IConfiguration configuration) {
+          var teamCityConnection = configuration.GetSection("Connection").Get<ConnectionOptions>();
+          if (teamCityConnection == null) {
+            throw new Exception("There is no 'Connection' configuration section present, neither in appsettings.json or via environment variables!");
+          }
+          if (string.IsNullOrEmpty(teamCityConnection.Url)) {
+            throw new Exception("Connection.Url is not present");
+          }
+          if (string.IsNullOrEmpty(teamCityConnection.Username)) {
+            throw new Exception("Connection.Username is not present");
+          }
+          if (string.IsNullOrEmpty(teamCityConnection.Password)) {
+            throw new Exception("Connection.Password is not present");
+          }
+        }
     }
 }
