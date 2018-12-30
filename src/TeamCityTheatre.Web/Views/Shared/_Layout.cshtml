@@ -10,7 +10,7 @@
   @RenderSection("styles", required:false)
 </head>
 <body>
-@{ Html.RenderPartial("_nav"); }
+@{ await Html.RenderPartialAsync("_nav"); }
 <div id="body" class="container-fluid">
   @RenderBody()
 </div>
