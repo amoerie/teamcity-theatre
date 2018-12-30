@@ -27,9 +27,10 @@ namespace TeamCityTheatre.Core.DataServices {
     }
 
     public async Task<IEnumerable<IDetailedBuild>> GetBuildsOfBuildConfigurationAsync(string buildConfigurationId, int count = 100) {
-      var request = new RestRequest(_apiOptions.GetBuildsOfBuildConfiguration);
-      request.AddUrlSegment("count", Convert.ToString(count));
-      request.AddUrlSegment("buildConfigurationId", buildConfigurationId);
+      var requestUrl = _apiOptions.GetBuildsOfBuildConfiguration;
+      requestUrl = requestUrl.Replace("{count}", count.ToString());
+      requestUrl = requestUrl.Replace("{buildConfigurationId}", buildConfigurationId);
+      var request = new RestRequest(requestUrl);
       var response = await _teamCityClient.ExecuteRequestAsync<BuildsResponse>(request);
       return _buildMapper.Map(response);
     }

@@ -1,22 +1,13 @@
 @echo off
 :: PREP FOLDERS
-if not exist docker mkdir docker
-if not exist docker\logs mkdir docker\logs
-if not exist docker\data mkdir docker\data
-
-:: BUILD DOCKER IMAGE
-echo Building docker image for TeamCityTheatre
-docker build --file Dockerfile --tag teamcitytheatre_image .
-if %errorlevel% neq 0 (
-    echo Failed to build docker image
-    pause
-    exit /b %errorlevel%
-)
+if not exist docker ( mkdir docker )
+if not exist docker\logs ( mkdir docker\logs )
+if not exist docker\data ( mkdir docker\data )
 
 :: STOP AND REMOVE EXISTING CONTAINER
 echo Stopping and removing previous container
-docker stop teamcitytheatre 2>nul 
-docker rm teamcitytheatre 2>nul
+docker stop teamcitytheatre 2> nul 
+docker rm teamcitytheatre 2> nul
 
 :: START NEW DOCKER CONTAINER
 echo Starting TeamCityTheatre container

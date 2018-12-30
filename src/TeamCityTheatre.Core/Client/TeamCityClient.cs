@@ -33,14 +33,18 @@ namespace TeamCityTheatre.Core.Client {
     readonly IRestClient _client;
     readonly IResponseValidator _responseValidator;
     readonly ITeamCityRequestPreparer _teamCityRequestPreparer;
+    readonly ILogger _logger;
 
     public TeamCityClient(
       ITeamCityRestClientFactory teamCityRestClientFactory, IOptionsSnapshot<ConnectionOptions> connectionOptionsSnapshot,
-      IResponseValidator responseValidator, ITeamCityRequestPreparer teamCityRequestPreparer) {
+      IResponseValidator responseValidator, ITeamCityRequestPreparer teamCityRequestPreparer,
+      ILogger logger) {
       if (connectionOptionsSnapshot == null) throw new ArgumentNullException(nameof(connectionOptionsSnapshot));
+      if (logger == null) throw new ArgumentNullException(nameof(logger));
       var connectionOptions = connectionOptionsSnapshot.Value;
       _responseValidator = responseValidator ?? throw new ArgumentNullException(nameof(responseValidator));
       _teamCityRequestPreparer = teamCityRequestPreparer ?? throw new ArgumentNullException(nameof(teamCityRequestPreparer));
+      _logger = logger;
       _client = teamCityRestClientFactory?.Create(connectionOptions) ?? throw new ArgumentNullException(nameof(teamCityRestClientFactory));
     }
 
@@ -50,6 +54,7 @@ namespace TeamCityTheatre.Core.Client {
       _client.ExecuteAsync<TResponse>(restRequest, restResponse => {
         if (restResponse.ErrorException != null) {
           const string message = "Failed to make request to the TeamCity server";
+          _logger.Error("Received error response: {status} {responseContent}",  restResponse.StatusCode, System.Text.Encoding.UTF8.GetString(restResponse.RawBytes));
           taskCompletionSource.SetException(new Exception(message, restResponse.ErrorException));
         } else {
           taskCompletionSource.SetResult(restResponse);
