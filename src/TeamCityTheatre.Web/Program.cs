@@ -22,7 +22,6 @@ namespace TeamCityTheatre.Web {
 
     public static IWebHost BuildWebHost(string[] args, IConfiguration configuration, ILogger logger) {
       return new WebHostBuilder()
-        .UseSerilog(logger, dispose: true)
         .UseKestrel()
         .UseContentRoot(Directory.GetCurrentDirectory())
         .UseConfiguration(configuration)
@@ -30,6 +29,7 @@ namespace TeamCityTheatre.Web {
         .CaptureStartupErrors(true)
         .UseSetting(WebHostDefaults.DetailedErrorsKey, "True")
         .UseDefaultServiceProvider((context, options) => options.ValidateScopes = context.HostingEnvironment.IsDevelopment())
+        .UseSerilog(logger, dispose: true)
         .ConfigureServices(sc => sc.AddSingleton(logger))
         .UseStartup<Startup>()
         .Build();
