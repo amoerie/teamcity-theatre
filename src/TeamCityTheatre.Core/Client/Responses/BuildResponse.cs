@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace TeamCityTheatre.Core.Client.Responses {
   public class BuildResponse {
@@ -13,6 +14,8 @@ namespace TeamCityTheatre.Core.Client.Responses {
     public string Href { get; set; }
     public string WebUrl { get; set; }
     public string StatusText { get; set; }
+    
+    [JsonProperty(PropertyName="running-info")]
     public RunningInfoResponse RunningInfo { get; set; }
     public BuildTypeResponse BuildType { get; set; }
     public DateTime QueuedDate { get; set; }
