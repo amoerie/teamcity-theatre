@@ -53,9 +53,15 @@ namespace TeamCityTheatre.Core.Client {
       var taskCompletionSource = new TaskCompletionSource<IRestResponse<TResponse>>();
       _client.ExecuteAsync<TResponse>(restRequest, restResponse => {
         if (restResponse.ErrorException != null) {
-          const string message = "Failed to make request to the TeamCity server";
-          _logger.Error("Received error response: {status} {responseContent}",  restResponse.StatusCode, System.Text.Encoding.UTF8.GetString(restResponse.RawBytes));
-          taskCompletionSource.SetException(new Exception(message, restResponse.ErrorException));
+          try {
+            var responseContent = System.Text.Encoding.UTF8.GetString(restResponse.RawBytes);
+            _logger.Error(restResponse.ErrorException, "Error response from TeamCity: {status} {responseContent}", restResponse.StatusCode, responseContent);
+          } catch (Exception e) {
+            var aggregateException = new AggregateException(restResponse.ErrorException, e);
+            _logger.Error(aggregateException, "Error when calling TeamCity {status}", restResponse.StatusCode);
+          } finally {
+            taskCompletionSource.SetException(new Exception("Failed to make request to the TeamCity server", restResponse.ErrorException));
+          }
         } else {
           taskCompletionSource.SetResult(restResponse);
         }
