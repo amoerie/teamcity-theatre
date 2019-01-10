@@ -22,7 +22,7 @@ COPY ./src/TeamCityTheatre.Web/package-lock.json ./TeamCityTheatre.Web/
 WORKDIR /TeamCityTheatre/TeamCityTheatre.Web
 
 # install node packages
-RUN npm install
+RUN npm ci
 
 #######################
                       
