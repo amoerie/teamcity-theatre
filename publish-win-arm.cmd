@@ -1,3 +1,3 @@
 @echo off
 TITLE TeamCityTheatre -- Publish
-rmdir /S /Q "./publish-output" & dotnet restore "./src/TeamCityTheatre.sln" && dotnet clean "./src/TeamCityTheatre.sln" --configuration Release --verbosity normal && cd "./src/TeamCityTheatre.Web" && npm install && npm run build:release && cd .. && cd .. && dotnet publish "./src/TeamCityTheatre.Web/TeamCityTheatre.Web.csproj" -r win-arm --configuration Release --verbosity normal --output "./../../publish-output"
+rmdir /S /Q "./publish-output" & dotnet restore "./src/TeamCityTheatre.sln" && dotnet clean "./src/TeamCityTheatre.sln" --configuration Release --verbosity normal && cd "./src/TeamCityTheatre.Web" && npm ci && npm run build:release && cd .. && cd .. && dotnet publish "./src/TeamCityTheatre.Web/TeamCityTheatre.Web.csproj" -r win-arm --configuration Release --verbosity normal --output "./../../publish-output"
