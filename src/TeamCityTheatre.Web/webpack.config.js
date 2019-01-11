@@ -8,8 +8,8 @@ module.exports = function () {
       assets: true
     },
     entry: {
-      "dashboard": "./Views/home/dashboard.js",
-      "settings": "./Views/home/settings.js"
+      "dashboard": "./Views/Home/dashboard.js",
+      "settings": "./Views/Home/settings.js"
     },
     output: {
       path: path.resolve(__dirname, "wwwroot/js"),

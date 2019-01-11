@@ -28,7 +28,7 @@
     "webpack-cli": "^3.1.2"
   },
   "scripts": {
-    "clean": "rimraf ./Views/**/*.js ./Views/**/*.js.map",
+    "clean": "rimraf ./Views/**/*.js ./Views/**/*.js.map ./wwwroot/js/*.js ./wwwroot/css/*.css",
     "ts": "tsc --pretty",
     "js": "webpack --config=webpack.config.js --hide-modules --colors --mode=production",
     "js:debug": "webpack --config=webpack.config.js --colors --hide-modules --mode=development",
