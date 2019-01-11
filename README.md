@@ -1,4 +1,4 @@
-# TeamCity Theatre 
+# :tv: TeamCity Theatre 
 
 [![Build Status](https://travis-ci.org/amoerie/teamcity-theatre.svg?branch=master)](https://travis-ci.org/amoerie/teamcity-theatre)
 
