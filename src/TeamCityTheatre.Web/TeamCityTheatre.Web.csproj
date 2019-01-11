@@ -23,7 +23,7 @@
     <Content Include="wwwroot\**\*">
       <CopyToPublishDirectory>Always</CopyToPublishDirectory>
     </Content>
-    <Content Include="views\**\*.cshtml">
+    <Content Include="Views\**\*.cshtml">
       <CopyToPublishDirectory>Always</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
