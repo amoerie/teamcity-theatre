@@ -2,6 +2,7 @@
   "compileOnSave": true,
   "compilerOptions": {
     "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "jsx": "react",
     "jsxFactory": "createElement",
