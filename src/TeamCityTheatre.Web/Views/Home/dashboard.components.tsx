@@ -72,9 +72,13 @@ const Tile = (props: { view: IView, data: ITileData }) => {
   return (
     <div id={props.data.id} className={`tile ${buildStatus} ${height} ${width}`}>
       <h4 className="tile-title">{props.data.label}</h4>
+      {props.view.defaultNumberOfBranchesPerTile > 0 
+        ? 
       <div className="tile-builds">
         {props.data.builds.map(build => <Build key={build.id} build={build}/>)}
       </div>
+        : null
+      }
     </div>
   );
 };
