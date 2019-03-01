@@ -22,7 +22,7 @@
     "@types/uuid": "^3.4.4",
     "postcss-cli": "^6.1.1",
     "postcss-nested": "^4.1.1",
-    "rimraf": "^2.6.2",
+    "rimraf": "^2.6.3",
     "typescript": "^3.3.3333",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.3"
