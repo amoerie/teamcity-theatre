@@ -11,7 +11,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-sortable-hoc": "^1.9.1",
-    "rxjs": "^6.1.0",
+    "rxjs": "^6.5.1",
     "tslib": "^1.9.3",
     "uuid": "^3.3.2"
   },
