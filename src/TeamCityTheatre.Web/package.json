@@ -12,7 +12,7 @@
     "react-dom": "^16.8.6",
     "react-sortable-hoc": "^1.9.1",
     "rxjs": "^6.5.2",
-    "tslib": "^1.9.3",
+    "tslib": "^1.10.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
