@@ -48,9 +48,10 @@ Stick a TV on the wall, open a browser there and enjoy your TeamCity projects in
 ```javascript
   "Connection": {
     "Url": "http://your-teamcity-server/",
-    "AuthenticationMode": "BasicAuthentication" // or "Guest"
-    "Username": "your-teamcity-username",
-    "Password": "your-teamcity-password"
+    "AuthenticationMode": "BasicAuthentication" // or "Guest" or "AccessToken"
+    "Username": "your-teamcity-username", // if using Basic
+    "Password": "your-teamcity-password", // if using Basic
+    "AccessToken": "your-teamcity-accesstoken", // if using AccessToken
   }
 ```
   - OR add the following environment parameters: (watch the number of underscores!!!)
@@ -58,6 +59,7 @@ Stick a TV on the wall, open a browser there and enjoy your TeamCity projects in
     - TEAMCITYTHEATRE_CONNECTION__AUTHENTICATIONMODE
     - TEAMCITYTHEATRE_CONNECTION__USERNAME
     - TEAMCITYTHEATRE_CONNECTION__PASSWORD
+    - TEAMCITYTHEATRE_CONNECTION__ACCESSTOKEN
 
 3. (Optional) In appsettings.json, change the location of the configuration.json file or leave the default. This file will contain your views/tiles/etc.
 4. (Optional) In appsettings.json, change the logging configuration. It's quite verbose by default, but will never take more than 75MB of space.
