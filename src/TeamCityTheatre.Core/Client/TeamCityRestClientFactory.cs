@@ -32,6 +32,14 @@ namespace TeamCityTheatre.Core.Client {
           };
           break;
         }
+
+        case AuthenticationMode.AccessToken: {
+          client = new RestClient {
+            BaseUrl = new Uri(new Uri(connectionOptions.Url), new Uri("app/rest", UriKind.Relative)),
+            Authenticator = new JwtAuthenticator(connectionOptions.AccessToken)
+          };
+          break;
+        }
         
         default:
           throw new ArgumentOutOfRangeException("Invalid connectionOptions.AuthenticationMode: " + connectionOptions.AuthenticationMode);

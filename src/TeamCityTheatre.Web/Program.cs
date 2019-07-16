@@ -75,12 +75,19 @@ namespace TeamCityTheatre.Web {
         throw new Exception("Connection.Password is not present  and authenticationMode is set to BasicAuthentication");
       }
 
+      if (teamCityConnection.AuthenticationMode == AuthenticationMode.AccessToken && string.IsNullOrEmpty(teamCityConnection.AccessToken)) {
+        throw new Exception("Connection.AccessToken is not present and authenticationMode is set to AccessToken");
+      }
+
       logger.Information("Using TeamCity server    : " + teamCityConnection.Url);
       logger.Information("Using TeamCity auth mode : " + teamCityConnection.AuthenticationMode);
       logger.Information("Using TeamCity user      : " + teamCityConnection.Username);
       logger.Information("Using TeamCity password  : "
                          + teamCityConnection.Password?.FirstOrDefault()
                          + new string(teamCityConnection.Password?.Skip(1).Select(_ => '*').ToArray() ?? new char[0]));
+      logger.Information("Using TeamCity access token  : "
+                         + teamCityConnection.AccessToken?.FirstOrDefault()
+                         + new string(teamCityConnection.AccessToken?.Skip(1).Select(_ => '*').ToArray() ?? new char[0]));
     }
   }
 }
