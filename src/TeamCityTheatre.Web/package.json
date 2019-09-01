@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "@types/node": "^12.7.3",
-    "@types/react": "^16.8.22",
+    "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/uuid": "^3.4.5",
     "postcss-cli": "^6.1.3",
