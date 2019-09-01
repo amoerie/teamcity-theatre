@@ -13,7 +13,7 @@
     "react-sortable-hoc": "^1.10.1",
     "rxjs": "^6.5.2",
     "tslib": "^1.10.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@types/node": "^12.7.3",
